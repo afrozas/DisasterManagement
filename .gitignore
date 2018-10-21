@@ -26,6 +26,7 @@
 *.pyc
 *.sql
 *.sqlite
+*.sqlite3
 *.ini
 *.toml
 *.json
