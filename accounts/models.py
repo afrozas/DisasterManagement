@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
-from phone_field import PhoneField
 
 
 class UserManager(BaseUserManager):
@@ -28,11 +27,7 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser):
     """Profile of a user in the site."""
-    # user = models.OneToOneField(User,
-    #                             on_delete=models.CASCADE,
-    #                             primary_key=True,
-    #                             related_name='profile')
-    phone_num = PhoneField(unique=True)
+    phone_num = models.CharField(unique=True, max_length=15)
     address = models.TextField(max_length=500, blank=True)
     last_known_latitude = models.DecimalField(max_digits=9,
                                               decimal_places=6,
@@ -66,6 +61,3 @@ class User(AbstractBaseUser):
 
     def notify_watchers():
         pass
-
-    def __str__(self):
-        return self.user.username
