@@ -10,7 +10,7 @@ class SignUpForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['phone_num', 'address', 'password1', 'password2']
+        fields = ['name', 'phone_num', 'email', 'address', 'password1', 'password2']
         widgets = {
             'address': forms.Textarea(attrs={'rows': 4, 'style': 'resize:none;'
                                              })
