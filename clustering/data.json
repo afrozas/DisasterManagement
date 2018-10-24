@@ -1,6 +1,6 @@
 [
   {
-    "figure_path": "../clustering/plot_figures/31.890360396107567_75.38858653887351.png",
+    "figure_path": "clustering/plot_figures/31.890360396107567_75.38858653887351.png",
     "data": {
       "Books": 15,
       "Kids": 9,
@@ -29,7 +29,7 @@
     "longitude": 75.38858653887351
   },
   {
-    "figure_path": "../clustering/plot_figures/16.741141997924736_73.80728715560527.png",
+    "figure_path": "clustering/plot_figures/16.741141997924736_73.80728715560527.png",
     "data": {
       "Shoes": 15,
       "Outdoors": 9,
@@ -58,7 +58,7 @@
     "longitude": 73.80728715560527
   },
   {
-    "figure_path": "../clustering/plot_figures/15.117722069419735_93.30996212786513.png",
+    "figure_path": "clustering/plot_figures/15.117722069419735_93.30996212786513.png",
     "data": {
       "Sports": 7,
       "Kids": 9,
@@ -87,7 +87,7 @@
     "longitude": 93.30996212786513
   },
   {
-    "figure_path": "../clustering/plot_figures/24.111679521442767_85.75403094668994.png",
+    "figure_path": "clustering/plot_figures/24.111679521442767_85.75403094668994.png",
     "data": {
       "Tools": 7,
       "Grocery": 10,
@@ -116,7 +116,7 @@
     "longitude": 85.75403094668994
   },
   {
-    "figure_path": "../clustering/plot_figures/12.84382061815677_82.53393614573291.png",
+    "figure_path": "clustering/plot_figures/12.84382061815677_82.53393614573291.png",
     "data": {
       "Games": 9,
       "Automotive": 7,
@@ -145,7 +145,7 @@
     "longitude": 82.53393614573291
   },
   {
-    "figure_path": "../clustering/plot_figures/32.53417480108931_91.09948344415157.png",
+    "figure_path": "clustering/plot_figures/32.53417480108931_91.09948344415157.png",
     "data": {
       "Music": 6,
       "Garden": 11,
