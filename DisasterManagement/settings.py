@@ -24,6 +24,7 @@ SECRET_KEY = 'e=cicsscpsuq5b#h*t4xczy)l0mhy%w73cqa72ay-81s0js@jx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+FIGURE_DIR = os.path.join(BASE_DIR, 'clustering/plot_figures')
 
 ALLOWED_HOSTS = ['172.16.235.45']
 
@@ -39,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
-    'dashboard'
+    'dashboard',
+    'resource_map'
 ]
 
 MIDDLEWARE = [
