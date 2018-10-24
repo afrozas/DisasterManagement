@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<!-- /blog/first-aid-and-health-safety-for-disasters -->
+<html>
+<head><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1099.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<title>First Aid and Health Safety for Disasters</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <link href='https://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'> -->
+<link href="css/bootstrap.css" rel="stylesheet" media="screen">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet" media="screen">
+
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+<script>
+console.log('test widget 5');
+</script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+
+
+<!---header end---><div class="blue_wrap">
+	<div class="container">
+		<ul class="breadcrumb">
+			<li><a href="/">Home</a> <span class="divider">&gt;</span></li><li><a href="/blog">Blog</a> <span class="divider">&gt;</span></li><li class="active">First Aid and Health Safety for Disasters</li>		</ul>
+	</div>
+</div>
+
+<!--content-->
+<div class="content">
+	<div class="container">
+		<div class="row-fluid content_top">
+			<div class="span9">
+				<div class="maincontent">
+					<div class="title_wrap">
+						<h1>First Aid and Health Safety for Disasters</h1>
+					</div>
+					<div class="post_mate row-fluid">
+						<div class="pull-right">
+							<!-- AddThis Button BEGIN -->
+							<div class="addthis_toolbox addthis_default_style " style="display: inline">
+								<a class="addthis_counter_facebook"></a>
+								<a class="addthis_counter_twitter"></a>
+								<a class="addthis_counter_google_plusone"></a>
+								<a class="addthis_button_compact"></a>
+								<a class="addthis_counter addthis_bubble_style"></a>
+							</div>
+							<script type="text/javascript">
+                                var addthis_config = addthis_config || {};
+                                var addthis_config = {"data_track_addressbar":false};
+                            </script>
+							<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51eeea835eee44ea"></script>
+							<!-- AddThis Button END -->
+						</div>
+					</div>
+					<img src="https://s3.amazonaws.com/files.cprcertified.com/content/blog_114_5_0.jpg" width="740" height="240">
+					<p>
+	If you woke up one morning and found that your home was in the path of a natural disaster, like a wildfire or a hurricane, would you know what to do to stay safe? In these scenarios, there is often little time to react, so having a plan before it happens can be critical to your safety and survival. Do you know what to do to be prepared?<br />
+	<br />
+	Natural disasters have far-reaching, devastating consequences. Globally, natural disasters kill an average of <a href="http://www.who.int/environmental_health_emergencies/natural_events/en/">90,000 people</a> each year and affect 160 million more. FEMA estimates that 25 million Americans &ndash; nearly<a href="https://www.fema.gov/news-release/2017/12/29/fema-reflects-historic-year"> 8 percent</a> of the U.S. population &ndash; were affected by natural disasters in 2017.&nbsp; These staggering numbers are a testament to the sheer power of nature. Add to this the modern risk of active shooter disasters, and it&#39;s clear that danger is always a possibility.<br />
+	<br />
+	So how can you protect your family? Is it possible to avoid these dangers completely? Since many natural disasters are random events of nature, the answer is no. Instead of trying to avoid disasters, you&rsquo;re better off learning how to manage them. This starts with understanding the health and safety risks associated with each type of disaster, and the critical first aid that can make the difference between life and death in the aftermath.<br />
+	<br />
+	This guide is intended to give you the tools you need to keep yourself and your loved ones safe. Remember, after a disaster, emergency professionals are stretched thin. They may not be able to address your particular need quickly as they tend to those who are severely injured or trapped. By learning what to do, you can improve your chances of surviving the next disaster in your area. Whether you are in an area that is prone to hurricanes, tornadoes, earthquakes, blizzards, tsunamis or wildfires, you can have a plan for these events. You can even be prepared for encountering an active shooter, which is something anyone could experience in today&#39;s society. Read on to learn more about how to stay safe, even in the midst of a serious event.</p>
+<h1>
+	<a name="_87j8k0j984mz"></a><strong>Hurricanes and Tornadoes</strong></h1>
+<p>
+	Hurricanes and tornadoes are both powerful storms that can cause widespread damage due to high winds and damaging rains. In coastal areas, hurricanes are the biggest risk, while in the central part of the country tornadoes are a bigger problem. Both types of catastrophes pose serious health risks that can lead to loss of life. <a href="https://www.ncdc.noaa.gov/sotc/tropical-cyclones/201713">Four hurricanes</a> made landfall and an estimated <a href="https://www.ncdc.noaa.gov/sotc/tornadoes/201713">1,406 tornadoes</a> touched down in the United States in 2017, killing more than 450 people and costing the country <a href="https://coast.noaa.gov/states/fast-facts/hurricane-costs.html">$306.2 billion</a><u>. </u><br />
+	<br />
+	If you live in an area that is prone to either one of these types of storms, you smut know how to protect yourself. Here are some important health and safety tips that will ensure you know what to do to stay as safe as possible while dealing with these severe storm events.</p>
+<h2>
+	<a name="_o7o5785ra2fy"></a>Know the Risks</h2>
+<p>
+	The key to being safe and healthy in the midst of a storm is knowing the risks a storm poses. For hurricanes and tornadoes, these tips will help:<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Understand the risk of impact injuries. </strong>Flying debris can kill if it hits someone, and this is a common problem associated with wind storms like hurricanes and tornadoes.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/blog/first-aid-basics-first-aid-for-minor-cuts-and-scrapes"><strong>Know what to do for serious cuts and abrasions</strong></a><strong>. </strong>Debris on the ground or hurtling through the air can cause cuts, abrasions, and lacerations. The presence of bacteria in debris and flood water makes the risk of infection quite high. For cuts, wash hands thoroughly before treating, then apply pressure to control bleeding. Clean the wound with clean water or soap and water, and cover.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.cdc.gov/disasters/woundcare.html"><strong>If you cannot clean a wound, leave it open</strong></a><strong>. </strong>Unclean wounds that are covered are more likely to become seriously infected because the bacteria is trapped inside the damaged area.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Reassess wounds every 24 hours. </strong>Watch for signs of infection and get medical help as quickly as possible if infection begins.</p>
+<p style="margin-left: 40px;">
+	<em>According to </em><a href="/author/Dr-Mary-Williams-RN-DC-2/"><em>Dr. Mary A. Williams, R.N. and Doctor of Chiropractic</em></a><em>, the most common signs of infection are redness, heat, swelling, pain, pus, and/or loss of function. </em></p>
+<p style="margin-left: 40px;">
+	<em>&ldquo;A wound may have some or all of these signs at the site of the wound,&rdquo; Williams said. &ldquo;A wound may also cause systemic infection with fever, malaise, and generalized discomfort/pain. Any redness or streaks visible on the skin between the wound and the heart should be reported to medical personnel immediately. This is an early sign of the infection becoming systemic.&rdquo;</em></p>
+<p>
+	&middot;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://disasterdoc.net/2013/04/30/tornadoes-part-2-what-hurts-the-most-deaths-injuries-and-safety/"><strong>Protect the spinal cord if back injuries are suspected</strong></a><strong>. </strong>After a serious wind storm, spinal cord injuries are common. Using a backboard to transport someone can help limit the impact of these injuries.</p>
+<h2>
+	<a name="_aexo7ke40p5p"></a>Preparing for the Storm</h2>
+<p>
+	If you know you&#39;re going to be facing a hurricane or know that tornado season is approaching, there are some steps to take to ensure you&#39;re as safe as possible. Here are some of them:<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Hurricane-Disaster-Fact-Sheet.aspx"><strong>Stockpile supplies to last at least one week</strong></a><strong>. </strong>If the storm creates the worst possible damage, leaving you without power, having at least one week&rsquo;s worth of food and clean drinking water will help you manage until help arrives. If that is not possible, aim for three days&#39; worth of food and water. Choose non-perishable items and don&#39;t forget to put a manual can opener with your stash. Don&#39;t forget baby food and formula if you have babies in the home.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/blog/how-to-assemble-first-aid-kits-for-any-situation"><strong>Stock a first aid kit</strong></a><strong>. </strong>Your first aid kit should have bandages and tape, wound dressing, antiseptic sprays and creams, basic over-the-counter medicines, and any essential medications for members of your family.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.ready.gov/build-a-kit"><strong>Set aside a radio, batteries, cell phone charger, and flashlight</strong></a><strong>. </strong>These items will help you take care of yourself and your family while monitoring for information from emergency professionals as you prepare to ride out the storm.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/courses/adult-cpr-first-aid-training"><strong>Get training</strong></a><strong>. </strong>First aid and disaster preparedness training are critical if you live in an area that is prone to these types of storms. This training will ensure that you are fully prepared should you experience a disaster.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.kristv.com/story/36283170/tetanus-shot-before-hurricane-cleanup-may-be-a-good-idea"><strong>Get a tetanus shot</strong></a><strong>. </strong>If your immunizations are not up-to-date, get a tetanus shot. You are very likely to be exposed to this pathogen in the aftermath of a serious storm.</p>
+<h2>
+	<a name="_ecisvzloyq89"></a>During the Storm</h2>
+<p>
+	If a hurricane hits, here&#39;s what you need to do:<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.moneytalksnews.com/how-ready-your-home-for-hurricane-season/"><strong>Make the home as safe as possible.</strong></a><strong> </strong>Close interior doors, stay in an interior room of the home and avoid windows if possible.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.cnn.com/2007/HEALTH/08/20/carbon.monoxide/index.html"><strong>Use batteries, not fuel</strong></a><strong>. </strong>If you need light, use a flashlight, not a candle or kerosene lamp that could cause a fire or carbon monoxide poisoning.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Stay inside until the risk passes. </strong>Use the weather radio to know when the hurricane is over. Don&#39;t venture outside just because it seems calm, as you may be in the eye of the storm. After the eye, the most damaging part of the storm will hit, and you don&#39;t want to be outside when it does.<br />
+	If a tornado warning is sounded in your area, here&#39;s what you need to do to stay safe.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.actforlibraries.org/safest-place-in-your-home-to-be-during-a-hurricane-3/"><strong>Go to the basement</strong></a><strong>. </strong>This is the safest place in a tornado. If your home doesn&#39;t have a basement, head to an interior room, like a bathroom, or a closet. Stay away from windows and doors.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/power-outage"><strong>Prepare for power outages</strong></a><strong>. </strong>You will want battery-powered lighting and a radio to ensure you can be safe. Consider keeping a portable battery charger on hand during tornado season so you can charge your phone.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://thesurvivalmom.com/23-tips-to-help-you-prepare-for-tornado-season/"><strong>Put on shoes</strong></a><strong>. </strong>Should the tornado hit your neighborhood, you may not be able to find your shoes. Put on sturdy shoes so you are not injured walking on broken glass, wood, nails and other debris after the storm has passed.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.travelers.com/resources/weather/tornadoes/how-to-prepare-for-tornadoes"><strong>Add a whistle to your disaster supply kit</strong></a><strong>. </strong>In tornadoes, it&#39;s highly likely that you will become trapped if your home is hit. A whistle will help you signal for help.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.reflector.com/News/2018/03/07/Duck-and-cover-Tornado-drill-prepares-students-for-emergencies.html"><strong>Crouch and cover during the worst of the storm</strong></a><strong>. </strong>If the storm is hitting your home or neighborhood, head to your shelter, crouch low to the ground, and cover your head with your hands and arms.</p>
+<h2>
+	<a name="_68k6u6oirfon"></a>After the Storm</h2>
+<p>
+	After a hurricane or tornado, be aware of the risks that are still around you. Many of the deaths and injuries in these types of storms occur not during the storm, but rather <a href="https://www.cdc.gov/disasters/tornadoes/after.html">during its aftermath and cleanup efforts</a>. Here&#39;s how to avoid disaster and stay healthy.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.epa.gov/natural-disasters/flooding"><strong>Avoid touching flood water</strong></a><strong>.</strong> Though more common with hurricanes than tornadoes, both types of storms can lead to flooding. Flood water can carry deadly diseases. If it comes in contact with downed power lines, it can cause electrocution. Cars can be washed away by even a small amount of water, allowing their occupants to drown. Stay out of flood water and flooded areas to protect your health.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.remc.com/storm-center/electrical-safety-during-and-after-storms/"><strong>Watch for downed power lines</strong></a><strong>. </strong>Live power lines need to be reported to emergency professionals, then left alone. Be particularly cautious if water or metal are nearby.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/courses/bls-certification"><strong>Practice proper first aid if you find injured individuals</strong></a><strong>. </strong>If you have first aid training, be willing to jump in and help when it is needed. Check people for injuries and administer treatment if you know how. Begin CPR if you have been trained and someone stops breathing.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://beprepared.com/blog/16093/when-should-you-move-an-injured-person/"><strong>If you must move a seriously injured individual, stabilize the neck and back first</strong></a><strong>. </strong>If you can wait for help to arrive, it&#39;s usually best to leave the person where they are.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Be cautious entering damaged structures. </strong>Damaged buildings can crumble. They can also hold deadly mold and bacteria if they were water damaged. Use caution when entering buildings, which could injure you or make you sick. If the structure is seriously damaged, do not enter until authorities have deemed it safe.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Cover as much of your body as possible. </strong>Wear long sleeves, pants, work gloves and sturdy shoes when entering damaged areas to avoid undue injury.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.caution.com/tornado/recovering_from_tornado.html"><strong>Be aware of exhaustion</strong></a><strong>. </strong>Cleaning up after a storm is hard work, and you can easily fall victim to exhaustion. Pace yourself to protect your health.</p>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:2px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:2px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-pb7x{font-size:18px;background-color:#fe0000;color:#ffffff;border-color:#9b9b9b;text-align:center;vertical-align:top}
+.tg .tg-pgil{background-color:#efefef;border-color:#9b9b9b;text-align:center;vertical-align:top}</style>
+<table class="tg" height="664" width="667">
+	<tbody>
+		<tr>
+			<th class="tg-pb7x">
+				<span style="font-weight:bold">Advice for First Responders</span></th>
+		</tr>
+		<tr>
+			<td class="tg-pgil">
+				<p>
+					<strong>&ldquo;In the middle of a catastrophe, the job of a first responder can be overwhelming,&rdquo;</strong><br />
+					<a href="/author/Dr-Mary-Williams-RN-DC-2/" target="_blank">Dr. Mary A. Williams, R.N. and Doctor of Chiropractic</a> said. <strong>&ldquo;It is vitally important for first responders to take care of themselves first. Physical, mental and spiritual well-being are all interrelated.&rdquo;</strong></p>
+				<p style="text-align: left;">
+					Williams offered the following tips:</p>
+				<ul style="margin-left: 40px;">
+					<li style="text-align: left;">
+						Do what you can with what you have to work with. You can&rsquo;t do everything for everyone, so triage becomes imperative.</li>
+					<li style="text-align: left;">
+						Adequate hydration, food and rest are vital for maintaining the physical mental and emotional energy needed to care for others.&nbsp; Stop and eat, drink, close your eyes and pray or think gratitude thoughts.</li>
+					<li style="text-align: left;">
+						Breathe! Deep breathing is essential for maintaining your energy and focus.</li>
+					<li style="text-align: left;">
+						Excessive caffeine is not helpful during stressful times. Hydrating with water is ideal.</li>
+					<li style="text-align: left;">
+						Green tea is helpful as it enhances focus without the negative effects that caffeine can produce. Avoid sugary drinks that can initially give a boost but will quickly leave you in a hypoglycemic rebound slump.</li>
+					<li style="text-align: left;">
+						After a catastrophic event, it can be helpful to follow up with a professional counselor or therapist to address any unresolved stressors. Think of it as preventive wellness care.</li>
+					<li style="text-align: left;">
+						Remember, you can only do what you can do. You cannot help or save everyone. Do your best with what you have to work with. Remember that you are only human.</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	&nbsp;</p>
+<p>
+	&middot;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<a href="https://www.mentalhealthfirstaid.org/2017/09/hurricanes-harvey-irma-mental-health/"><strong>Watch for mental health concerns</strong></a><strong>. </strong>The aftermath of a storm can cause depression and anxiety. Seek help if you need it after a serious event. Make sure children have a place to talk about their own concerns and fears.<br />
+	For more information about health, first aid and safety before, during and after hurricanes and tornadoes, visit:<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.fema.gov/media-library-data/20130726-1906-25045-5288/respond_to_tornado_injuries_with_first_aid_training.pdf">FEMA: Respond to Tornado Injuries with First Aid Training</a><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/">Online CPR Certification</a><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://stormaware.mo.gov/preparing-for-a-tornado/">Missouri Storm Aware: Preparing for a Tornado</a><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.cdc.gov/disasters/hurricanes/supplies.html">CDC Hurricanes: Family Health, Safety and Preparation</a><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="https://www.unionmutual.com/tips/hurricane-safety-planning/">Union Mutual: Hurricane Safety and Planning</a><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.redcross.org/news/press-release/Top-6-Red-Cross-Preparedness-Tips-to-Stay-Safe-this-Hurricane-Season">Red Cross: The Top 6 Red Cross Preparedness Tips to Stay Safe This Hurricane Season</a></p>
+<h1>
+	<a name="_7mu86aa53vgv"></a><strong>Earthquake and Landslide</strong></h1>
+<p>
+	Every year, an average of <a href="https://earthquakes.bgs.ac.uk/research/earthquakeActivity.html">15 earthquakes with a magnitude of 7 or greater</a> hit around the globe. While this number seems small when compared to events like tornadoes, which happen more frequently, the long-term effects of an earthquake combined with the challenges of predicting them make these particular disasters quite devastating. Landslides can have a similar impact on the areas they hit, destroying buildings and injuring people.<br />
+	<br />
+	No matter where you live, you are at risk for an earthquake, but if you live near a known fault zone, that risk increases. And if you live in a mountainous area, a landslide is always a risk. To make sure your family can stay healthy and safe, even with these risks around you, here are some tips to help.</p>
+<h2>
+	<a name="_uioj4ph4fszg"></a>Know the Risks</h2>
+<p>
+	What are the health and safety risks connected with landslides and earthquakes? Consider these:<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.medicalnewstoday.com/articles/237093.php"><strong>Understand that the biggest risk is musculoskeletal injury</strong></a><strong>. </strong>Falls, falling debris, and collapsing buildings often cause musculoskeletal injuries. Of those injuries, 65 percent are lacerations, 22 percent are fractures and 20 percent are crush injuries. The majority of the crush injuries occur to the lower limbs of the body.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.med.or.jp/english/pdf/2005_07/341_352.pdf"><strong>Realize that failure to get prompt treatment can lead to complications</strong></a><strong>. </strong>People who suffer a crush injury can lose substantial amounts of blood, causing serious illness or death. Sepsis from infected wounds is also a risk.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://kidshealth.org/en/parents/head-injury.html"><strong>Head injuries</strong></a><strong> are a leading cause of death and trauma after an injury. </strong>If you are attempting to give first aid to someone, know how to watch for head injuries.</p>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:2px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:2px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-pb7x{font-size:18px;background-color:#fe0000;color:#ffffff;border-color:#9b9b9b;text-align:center;vertical-align:top}
+.tg .tg-pgil{background-color:#efefef;border-color:#9b9b9b;text-align:center;vertical-align:top}</style>
+<table class="tg" height="833" width="667">
+	<tbody>
+		<tr>
+			<th class="tg-pb7x">
+				<span style="font-weight:bold">Head Trauma Warning Signs</span></th>
+		</tr>
+		<tr>
+			<td class="tg-pgil">
+				<p>
+					According to <a href="/author/Dr-Mary-Williams-RN-DC-2/" target="_blank">Dr. Mary A. Williams, R.N. and Doctor of Chiropractic</a>, visible wounds that are bleeding profusely may not be the biggest concern when people have head injuries.</p>
+				<p style="text-align: left;">
+					<span style="font-weight:bold">&ldquo;Soft tissue injuries to the face and scalp often bleed profusely and appear dramatic in nature but are rarely life-treatening in and of themselves,&rdquo;</span> Williams said.&nbsp; <span style="font-weight:bold">&ldquo;Certain signs and symptoms should alert the first responder to the presence of more serious head trauma.&quot;</span><br />
+					<br />
+					Some of the warning signs to watch for include:</p>
+				<ul>
+					<li style="text-align: left;">
+						Bilateral black eyes or &ldquo;raccoon eyes&rdquo; could be the result of a basilar skull fracture.</li>
+					<li style="text-align: left;">
+						Blood or cerebrospinal fluid drainage leaking from the nose or ear is an indication of probable serious head trauma. Medical attention is imperative. Keep the person calm and lying down if possible. Do not attempt to control this leakage as that may cause an increase in intracranial pressure. Keep the person NPO (nothing by mouth &ndash; food/fluids) as they may require surgery for their injuries.</li>
+					<li style="text-align: left;">
+						Any change in level of consciousness or behavior &ndash; either becoming more agitated/erratic or more lethargic/confused &ndash; is an indication of possible brain damage. Early detection and intervention can mean the difference between an injury that may recover and one that becomes permanent.</li>
+					<li style="text-align: left;">
+						Observe the person&rsquo;s pupils. Are they the same size, do they both react to light the same way? Can the person&rsquo;s eyes follow your finger as you move your finger closer or farther away? Keep the person with suspected head injury calm, comfortable, and under close observation.</li>
+					<li style="text-align: left;">
+						A headache that doesn&rsquo;t resolve with over-the-counter medication such as acetaminophen or ibuprofen or continues to worsen can be a sign of brain damage. Avoid taking aspirin as this can thin the blood and create complications if there is bleeding occurring in the brain.</li>
+					<li style="text-align: left;">
+						Whenever there is head injury, there is a potential for facial bone fractures and broken teeth. Assess the person&rsquo;s mouth and nose, look for areas that appear swollen and tender to touch. A cold compress with direct pressure can alleviate bleeding &amp; discomfort but be careful to apply only gentle pressure.&nbsp; Bruising occurs later and can indicate areas of injury.</li>
+					<li style="text-align: left;">
+						Always monitor an injured person&rsquo;s airway and be alert for changes in breath sounds or swallowing issues.</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	&nbsp;</p>
+<p>
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.samhsa.gov/find-help/disaster-distress-helpline/disaster-types/earthquakes"><strong>Watch for signs of mental health risks in the days and months following an earthquake</strong></a><strong>. </strong>The trauma of an earthquake can lead to post-traumatic stress disorder, depression and thoughts of suicide.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://ktla.com/2014/11/06/heart-attacks-increase-during-earthquakes-health-smart/"><strong>Be cautious about heart disease</strong></a><strong>. </strong>Cleaning up after an earthquake is strenuous. People can suffer cardiac events if they are not careful. It&rsquo;s important to pace yourself, stay hydrated, and know your limits.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4769420/"><strong>Dust and debris in the air can increase the risk of respiratory concerns</strong></a><strong>. </strong>For people with respiratory disease, like asthma, increased caution is needed.</p>
+<h2>
+	<a name="_x7zf8bb55afg"></a>Preparing for the Possibility of an Earthquake or Landslide</h2>
+<p>
+	Earthquakes are random and often come with minimal warning. However, there are steps to take to prepare for the possibility of an earthquake if you live in an area where they are common.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.fema.gov/earthquake-safety-home"><strong>Prepare your home</strong></a><strong>. </strong>Make sure your home was built to handle the stresses of an earthquake. Anchor the home to its foundation properly, anchor heavy furniture to the wall and secure objects that present a safety hazard.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.earthquakecountry.org/dropcoverholdon/"><strong>Identify the safest spots</strong></a><strong>. </strong>Identify the safest spots in each room of your home, and instruct your family how to drop, cover and hold on during an earthquake.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://totallyunprepared.com/make-a-home-earthquake-ki/"><strong>Maintain your emergency supply kit</strong></a><strong>. </strong>In an earthquake, power may go out and emergency professionals may have trouble getting to you, so have three days&#39; worth of supplies on hand.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.govtech.com/em/emergency-blogs/disaster-zone/5-landslide-prevention-tips-plus-when-to-get-out.html"><strong>Consider planting ground covers or installing retaining walls</strong></a><strong>. </strong>These measures can prevent landslides if you are at risk for one.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.ready.gov/landslides-debris-flow"><strong>Spot landslide warning signs</strong></a><strong>. </strong>Changes to your landscape, widening cracks on your paved areas, bulging ground at the base of a slope and cracks on your home&#39;s plaster, tile, brick or foundation are all signals that a landslide may occur.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/landslide"><strong>Stay alert and awake during storms</strong></a><strong>. </strong>Landslide deaths often occur when the landslide happens at night and people are asleep, giving them no way to properly evacuate the building.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.shakeout.org/"><strong>Participate in the Great Shakeout</strong></a>. This event teaches people what to do in an earthquake and is a great way to ensure your family is safe should one strike.</p>
+<h2>
+	<a name="_tk2zfp1ps6ye"></a>During a Landslide or Earthquake</h2>
+<p>
+	If you experience a landslide or earthquake, here is what you need to do to stay safe.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/earthquake"><strong>Practice drop, cover, and hold on for earthquakes</strong></a><strong>. </strong>While the event may be frightening, the best way to prevent injury is to practice dropping to the ground, covering your head, and holding on to something sturdy until the shaking stops.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Move away from the path in a landslide. </strong>The biggest danger in a landslide is the area in the path of the land or debris flow. If you can, move away from it as quickly as possible.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.safety.com/earthquake-safety/"><strong>Protect your head</strong></a><strong>. </strong>In both events, falling debris is a serious health risk. Protect your head by curling and covering it with your hands.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.earthquakecountry.org/step6/"><strong>Protect the mouth, eyes, and nose from dust</strong></a><strong>. </strong>Cover your face with a breathable cloth if possible.</p>
+<h2>
+	<a name="_85stwx2w944l"></a>After the Event</h2>
+<p>
+	In the aftermath of a landslide or earthquake, keep these tips in mind:<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.fema.gov/media-library-data/1408632135401-3d0521fa59d0dd4016e82f08fe7f3732/PrepareAthon_EARTHQUAKES_HTG_FINAL_508.pdf"><strong>After the event, immediately check family members and neighbors for injuries</strong></a><strong>. </strong>Administer first aid quickly, because it may take a while for emergency medical assistance to arrive.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.webmd.com/first-aid/shock-treatment"><strong>Treat any victims suffering from shock</strong></a><strong>. </strong>This is a common reaction to an earthquake. Treat shock victims by elevating the feet over the heart and covering them with a warm blanket, as long as there are no other injuries that would be made worse by this.</p>
+<p>
+	&nbsp;</p>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:2px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:2px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-pb7x{font-size:18px;background-color:#fe0000;color:#ffffff;border-color:#9b9b9b;text-align:center;vertical-align:top}
+.tg .tg-pgil{background-color:#efefef;border-color:#9b9b9b;text-align:center;vertical-align:top}</style>
+<table class="tg" height="833" width="667">
+	<tbody>
+		<tr>
+			<th class="tg-pb7x">
+				<span style="font-weight:bold">Signs of Shock</span></th>
+		</tr>
+		<tr>
+			<td class="tg-pgil">
+				<span style="font-weight:bold">&ldquo;Shock is a medical emergency and requires emergency medical intervention,&rdquo;</span> according to<br />
+				<a href="/author/Dr-Mary-Williams-RN-DC-2/" target="_blank">Dr. Mary A. Williams, R.N. and Doctor of Chiropractic</a>. <span style="font-weight:bold">&ldquo;The earliest signs of shock are </span><br />
+				<span style="font-weight:bold">restlessness and anxiety. The patient will appear scared. Pulse will be elevated.&rdquo;</span><br />
+				<br />
+				In compensated shock, the following symptoms may be seen:
+				<ul style="margin-left: 200px;">
+					<li style="text-align: left;">
+						<span style="font-size:14px;">Agitation, anxiety, restlessness</span></li>
+					<li style="text-align: left;">
+						<span style="font-size:14px;">Sense of impending doom</span></li>
+					<li style="text-align: left;">
+						<span style="font-size:14px;">Weak, rapid and thready pulse</span></li>
+					<li style="text-align: left;">
+						<span style="font-size:14px;">Clammy skin</span></li>
+					<li style="text-align: left;">
+						<span style="font-size:14px;">Pallor with cyanotic lips</span></li>
+					<li style="text-align: left;">
+						<span style="font-size:14px;">Shortness of breath</span></li>
+					<li style="text-align: left;">
+						<span style="font-size:14px;">Nausea, vomiting</span></li>
+					<li style="text-align: left;">
+						<span style="font-size:14px;">Delayed capillary refill at the nail beds (infants &amp; children)</span></li>
+					<li style="text-align: left;">
+						<span style="font-size:14px;">Thirst</span></li>
+					<li style="text-align: left;">
+						<span style="font-size:14px;">Normal blood pressure</span></li>
+				</ul>
+				<p>
+					<br />
+					When the body starts losing its ability to compensate, symptoms of decompensation will occur:</p>
+				<ul style="margin-left: 160px;">
+					<li style="margin-left: 40px; text-align: left;">
+						<span style="font-size:14px;">Altered mental status (verbal unresponsiveness)</span></li>
+					<li style="margin-left: 40px; text-align: left;">
+						<span style="font-size:14px;">Hypotension</span></li>
+					<li style="margin-left: 40px; text-align: left;">
+						<span style="font-size:14px;">Labored or irregular breathing</span></li>
+					<li style="margin-left: 40px; text-align: left;">
+						<span style="font-size:14px;">Thread or absent peripheral pulses</span></li>
+					<li style="margin-left: 40px; text-align: left;">
+						<span style="font-size:14px;">Ashen, mottled, or cyanotic skin</span></li>
+					<li style="margin-left: 40px; text-align: left;">
+						<span style="font-size:14px;">Dilated pupils</span></li>
+					<li style="margin-left: 40px; text-align: left;">
+						<span style="font-size:14px;">Diminished urine output (oliguria)</span></li>
+					<li style="margin-left: 40px; text-align: left;">
+						<span style="font-size:14px;">Impending cardiac arrest</span></li>
+				</ul>
+				<p>
+					If you suspect someone is experiencing symptoms of shock, maintain an open airway, suction if necessary and equipment is available. In general, keep the person in a supine position, elevate the person&rsquo;s lower extremities approximately 12&rdquo; by propping them up on blankets or pillows to enhance circulatory perfusion to the heart, lungs &amp; vital organs.&nbsp; Place blankets over the person to maintain body warmth. A person with a severe heart attack or respiratory issues may find it easier to breathe while sitting in an upright position. Shock requires emergency medical intervention. Do not delay treatment.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	&nbsp;</p>
+<p>
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.getprepared.gc.ca/cnt/rsrcs/pblctns/rthqks-wtd/index-en.aspx"><strong>Be aware of aftershocks or additional slide risk.</strong></a><strong> </strong>After an earthquake or landslide, the risk is not over. Both can have after effects, including additional slides or aftershocks.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://pnsn.org/outreach/earthquakehazards/fire"><strong>Watch for fires after an earthquake</strong></a><strong>. </strong>Disruptions of wiring and gas lines can lead to fires. Consider shutting off your natural gas and be ready to put out any fires quickly to protect your home.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.cdc.gov/disasters/chemicals.html"><strong>Be wary of the risk from spilled chemicals</strong></a><strong>. </strong>If toxic chemicals have spilled, cover them with absorbent materials, such as dirt. However, if you cannot identify the chemical, leave your home and get professional help. Some chemicals, like bleach and ammonia, can create toxic gas if they are mixed.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.ready.gov/landslides-debris-flow"><strong>If you have a clear path to safety, leave a damaged building</strong></a><strong>. </strong>Buildings damaged in landslides and earthquakes can collapse, so once the danger has passed, leave the property if you see signs of damage.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.cdc.gov/healthywater/emergency/extreme-weather/floods-standingwater.html"><strong>Be cautious around flood waters.</strong></a><strong> </strong>Both events can cause flooding, and flood water carries debris and disease. Stay away from flood water.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.newtimes.co.rw/section/read/88194"><strong>Open closets and cupboards carefully.</strong></a><strong> </strong>These can easily have dangers if items inside shifted during the emergency, so open slowly to avoid undue injury.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.fema.gov/news-release/2011/11/17/helpful-hints-how-spot-earthquake-damage"><strong>Check buildings for damage</strong></a><strong>. </strong>Damage to the foundation or the land surrounding your home or another building could make it unstable. Do not re-enter a property until you have assessed the potential for damage.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Help injured people stay calm by being calm yourself. </strong>The suddenness and devastation of an earthquake can cause injury victims to panic. While trying to administer first aid, stay calm and confident to help alleviate fears.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.who.int/hac/techguidance/tools/mental_health_pakistan_earthquake/en/"><strong>Understand the risk of long-term mental health issues</strong></a><strong>. </strong>The random nature of both of these events can lead to long-term mental health issues, including anxiety. Make sure anyone suffering from these gets professional help.<br />
+	For more information about preparing for and recovering from an earthquake or landslide, visit:<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.osha.gov/dts/earthquakes/index.html">OSHA: Earthquake Preparedness and Response</a><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://landslides.usgs.gov/learn/prepare.php">USGS: Landslide Preparedness</a><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.wunderground.com/prepare/landslide">Weather Underground: Prepare for a Landslide</a><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.pema.pa.gov/planningandpreparedness/readypa/Pages/Earthquakes-and-Landslides.aspx">Pennsylvania Emergency Management Agency: Earthquakes and Landslides</a><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.vaemergency.gov/prepare-recover/threat/earthquakes-landslides/">Virginia Department of Emergency Management: Earthquakes and Landslides</a></p>
+<h1>
+	<a name="_rlnk8ve34972"></a><strong>Wildfires, Blizzards, and Tsunamis</strong></h1>
+<p>
+	Wildfires, blizzards, and tsunamis each carry their own health and safety risks. While some first aid tips apply to all three, each has its own unique set of problems that you need to be aware of if you live in an area prone to these problems.</p>
+<h2>
+	<a name="_frthdl54110y"></a>General First Aid and Safety Tips</h2>
+<p>
+	Being prepared for disasters means knowing proper first aid and safety precautions. Some are universal to all disasters. Whether you are facing a tsunami, wildfire or blizzard, keep these tips in mind:<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.ready.gov/evacuating-yourself-and-your-family"><strong>Be ready to flee.</strong></a><strong> </strong>These three disasters often come with little warning. In the case of tsunamis and wildfires, you may need to flee your home at a moment&#39;s notice, so have a &ldquo;go bag&rdquo; packed and ready.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.cdc.gov/disasters/woundcare.html"><strong>Know how to treat common wounds</strong></a><strong>. </strong>Burns and abrasions need to be treated quickly to avoid infection, and during a disaster, emergency professionals are stretched thin. Know how to treat these injuries so you protect yourself and your family.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.ready.gov/power-outages"><strong>Prepare for extended power outages</strong></a><strong>. </strong>All of these disasters can destroy power in your area. Have non-perishable, canned food on hand, as well as battery-powered radios and lighting. Disconnect your automatic garage door opener so you can open the door by hand if needed.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.socalgas.com/stay-safe/emergency-information/shut-off-natural-gas"><strong>Shut off natural gas at the source</strong></a><strong>. </strong>This will prevent a house fire in the aftermath of a disaster. The exception is when facing a blizzard, in which case you will need natural gas to remain warm.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.ptsd.va.gov/professional/pages/effects-disasters-mental-health.asp"><strong>Prepare for the mental health toll.</strong></a><strong> </strong>All three of these disasters can cause depression and anxiety. Even a blizzard, which may be less deadly, can lead to problems when you are trapped at home. If you feel tired, sad, lonely, worried or similar feelings, get mental health help.</p>
+<h2>
+	<a name="_jdkc2sx2cpy6"></a>Before, During and After Wildfires</h2>
+<p>
+	In 2017, <a href="http://wildfiretoday.com/tag/statistics/">wildfires consumed 9.7 million acres of land</a> in the United States, destroying homes and businesses along the way. While this was a record-breaking year for wildfires, this statistic shows just how widespread these disasters can be. If you live in a dry area with natural regions nearby, wildfires are always a risk. Here are some health and safety tips to help keep your family and home protected:<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://efficientgov.com/blog/2017/10/11/5-wildfire-safety-steps-everyone-should-take/"><strong>If evacuation orders are issued, leave your home</strong></a><strong>. </strong>This means your life is in imminent danger. On the flip side, if your area is under a red flag warning, you are in heavy risk of a fire, but there is not one immediately occurring in your specific area.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.readyforwildfire.org/Go-Evacuation-Guide/"><strong>Have multiple ways out</strong></a><strong>. </strong>Wildfires are unpredictable. Make sure you have more than one evacuation route planned so you can get to safety even if one area is closed.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Identify a water source outside of your home. </strong>Know where the nearest lake, well or swimming pool is that could be a source of water to put out a fire. If you can&#39;t find water, fill garbage cans, bathtubs and similar containers with water that you can use if the fire nears your home.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.redcross.org/news/article/Wildfires-Know-Red-Cross-Safety-Tips"><strong>Protect your air</strong></a><strong>. </strong>When a wildfire is near your home, close your windows to keep the smoke from entering your home. Turn on the air conditioner on recycle mode. If you have no air conditioner and it is hot outside, head to a shelter that has air conditioning. Don&#39;t add additional smoke to the air by burning candles or fireplaces during the fire. Remember to close vents, doors and fireplace screens as well.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.fema.gov/media-library-data/1409003859391-0e8ad1ed42c129f11fbc23d008d1ee85/how_to_prepare_wildfire_033014_508.pdf"><strong>Remove items that may burn easily from around your home</strong></a><strong>. </strong>Clear leaves from gutters, make a dirt barrier between any grass and plants and your home and don&#39;t give the fire quick access to your home. Aim to have a 30-foot fire barrier between your home and anything that might easily burn. Inside the home, move flammable items away from the windows and doors and toward the center of the home. Remove all window treatments.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.ready.gov/wildfires"><strong>Do not use tap water until it has been deemed safe</strong></a><strong>. </strong>This includes using water to brush teeth. Sometimes fires can damage the local water source. Have bottled water on hand.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.urmc.rochester.edu/encyclopedia/content.aspx?ContentTypeID=90&amp;ContentID=P09575"><strong>Learn to differentiate between the different types of burns</strong></a><strong>. </strong>A first-degree burn is treated differently than a fourth-degree burn, so learn how to recognize the different stages of burns. First-degree burns are superficial, causing only redness and pain. Second-degree burns cause blisters and swelling. Third-degree burns appear charred and white. Fourth-degree burns damage the muscles, bones and tendons.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.mayoclinic.org/first-aid/first-aid-burns/basics/art-20056649"><strong>Treat burns promptly and appropriately</strong></a><strong>. </strong>Start by removing restrictive items, like belts or jewelry, from the burned area to prevent restriction when swelling happens. Cover the burn with a cool, moist bandage, but do not immerse in water. Elevate the burned area, and call for emergency help.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.mayoclinic.org/first-aid/first-aid-shock/basics/art-20056620"><strong>Watch the burned individual for shock</strong></a><strong>. </strong>If the person faints, becomes pale, or starts breathing shallowly, they may be going into shock. Lay the person down, if you can, and elevate the legs until help arrives.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://lifesignsblog.com/2016/03/03/first-aid-for-burns-5-things-you-should-never-do/"><strong>Do not apply anything to the burned skin</strong></a><strong>. </strong>This includes ice, butter, ointment or sprays. The best initial treatment for a burn is rinsing it for 10 minutes under cool water.</p>
+<p style="margin-left: 40px;">
+	<em>&ldquo;It&rsquo;s an old wives&rsquo; tale that butter is a good remedy for a burn injury. Butter is great on toast, but never appropriate for a skin burn. Burns have a tendency to continue to trap and radiate heat. Placing butter over a burn traps the heat in the soft tissue and is not a sterile or even sanitary substance to put on injured skin,&rdquo; Dr. Mary Williams said.</em></p>
+<p style="margin-left: 40px;">
+	<em>&ldquo;Ice is great in lemonade, but has no place on burned skin,&rdquo; she added. &ldquo;Ice can cause further tissue damage by impairing circulation to the point of tissue destruction. Cool water is the best initial treatment for a burn. Ointments and sprays designed for treating burns can be used AFTER the initial cool down period with water.&rdquo;</em></p>
+<p>
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.netdoctor.co.uk/conditions/accidents-and-first-aid/a5366/burns/"><strong>Do not peel off clothing that is sticking to burned skin</strong></a><strong>. </strong>This causes an open wound and further damage. Leave clothing in place if it is stuck until help arrives.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.stjhs.org/healthcalling/2016/august/beat-the-heat-with-wildfire-health-safety-tips/"><strong>Protect your eyes and lungs from smoke.</strong></a><strong> </strong>Wear a surgical-grade N-95 mask to ensure you are fully protected from wildfire smoke. It&rsquo;s a good idea to purchase some of these as part of your disaster kit, but if you don&rsquo;t have one, any covering over the mouth and nose will help reduce the amount of smoke inhaled.</p>
+<p style="margin-left: 40px;">
+	<em>&ldquo;A scarf, bandana or even your shirt pulled up over your mouth and nose will help,&rdquo; Dr. Mary Williams said. &ldquo;Smoke from fires contain numerous toxins which may include cyanide, carbon monoxide, particulates and other toxic gases. You can&rsquo;t see those chemicals, and breathing them can cause serious respiratory distress. People with respiratory disorders (asthma, COPD) are especially vulnerable.&rdquo;</em></p>
+<p>
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/fire/cleaning-up-after-fire"><strong>When cleaning up after a wildfire</strong></a><strong>, wet debris. </strong>This helps reduce the amount of dust particles that get stirred up. Those dust particles will have smoke mixed in, which can cause breathing irritation.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.aqmd.gov/wildfire-health-info-smoke-tips"><strong>Toss food that has been exposed to fire, smoke or soot</strong></a><strong>. </strong>It is not safe to eat.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.npr.org/2016/08/22/490958421/in-wildfires-big-flames-attract-attention-but-watch-out-for-the-embers"><strong>Keep an eye out for embers</strong></a><strong>. </strong>Even after the fire has passed your area, winds can blow embers to your home and cause another fire. Keep an eye out on the roof and attic for a while.<br />
+	For more information about staying safe in a wildfire, visit:<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.cdc.gov/disasters/wildfires/index.html">CDC: Wildfires</a><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.nationalgeographic.com/environment/natural-disasters/wildfires/">National Geographic: Learn More About Wildfires</a><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.osha.gov/dts/wildfires/index.html">OSHA: Wildfires</a><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.iii.org/fact-statistic/facts-statistics-wildfires">Insurance Information Institute: Wildfires</a><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.nfpa.org/Public-Education/By-topic/Wildfire">National Fire Protection Association: Wildfires</a></p>
+<h2>
+	<a name="_9v7ejqscqm2f"></a>Before, During and After a Blizzard</h2>
+<p>
+	Winter storms typically come with a little warning, but that doesn&#39;t mean they are not potentially devastating. When ice and snow blanket an area, services shut down, power lines snap and people are trapped at home. You need to know how to be prepared to protect yourself and your family when a winter storm hits.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.necn.com/weather/stories/On-the-Road-in-a-Blizzard-Tips-for-Driving-Safely-in-the-Snow-366207201.html"><strong>Make sure your car is ready</strong></a><strong>. </strong>Having a car that is ready for winter weather, with the right level of antifreeze, a good battery and a full gas tank, as well as winter tires with enough tread, will help prevent you from being stranded in a storm. While it&#39;s always best to stay home, sometimes you have to venture out or get caught unexpectedly by a blizzard, and your car is an important part of your safety.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://efficientgov.com/blog/2017/10/26/4-tips-sheltering-winter-storms/"><strong>Evacuate your home if you lose power and heat</strong></a><strong>. </strong>The cold temperatures put your family at risk, so evacuate to somewhere that has power and heat.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/winter-storm#During"><strong>Stay inside if you can</strong></a><strong>. </strong>Keeping yourself warm and dry is critical to avoiding hypothermia or frostbite, which are two big risks in a winter storm.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.redcross.org/news/article/Learn-How-to-Stay-Safe-During-the-Blizzard"><strong>If you must head outside, dress in layers and cover your mouth</strong></a><strong>. </strong>Protect your exposed skin as well as your lungs from the cold air.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.polkcountyiowa.gov/emergency-management/emergency-preparedness/be-informed/blizzards/"><strong>Check your fuel levels</strong></a><strong>. </strong>If you heat your home with something other than natural gas or electricity your municipality supplies, make sure you have enough fuel.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.aus.com/Security-Services/Resources/Security-Awareness-Tips/View-Security-Awareness-Tip/ArticleId/105/Blizzard-Preparedness"><strong>Stock up on non-perishable food and water.</strong></a><strong> </strong>Have enough food on hand to go three days without power. This is always a risk when power lines are exposed to ice and snow.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Know that help may not arrive quickly. </strong>If roads are impassable, fire and ambulance crews may not be able to reach you. Have what you need to treat medical needs if they arise during a blizzard.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.aafp.org/afp/2004/1215/p2325.html"><strong>Learn how to treat hypothermia</strong></a><strong>. </strong>The biggest risk in a blizzard is the cold temperatures. If someone is suffering from hypothermia, get them to a warm, dry location as quickly as possible. Do not rub them, as the movement can trigger heart problems. Insulate the person with blankets and warm, dry clothing, and allow the person to sip warm beverages to warm the body from the inside.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.mayoclinic.org/diseases-conditions/hypothermia/diagnosis-treatment/drc-20352688"><strong>Apply warm compresses correctly</strong></a><strong>. </strong>Warm compresses from a first aid kit or even a towel warmed in the dryer should be applied to the chest wall, groin or neck. Do not apply to the arms or legs, which could send cold blood to the heart, lungs, and brain and cause fatal injuries. Avoid applying direct heat until the person has warmed.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.health.harvard.edu/blog/can-shoveling-snow-put-your-heart-at-risk-2017120612887"><strong>Watch for frostbite.</strong></a><strong> </strong>Frostbitten skin turns yellow, white, blue or black, becomes hard and looks shiny or waxy. The area may go numb. If you notice frostbite, get to a warm place and place a warm washcloth on the area. You can also soak limbs in water that is between 104 and 107 degrees. As the skin heals, it may hurt.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.health.harvard.edu/blog/can-shoveling-snow-put-your-heart-at-risk-2017120612887"><strong>Be cautious shoveling snow</strong></a><strong>. </strong>It&#39;s easy to overexert yourself shoveling snow, especially when you cannot feel the heat you would normally feel. Sweating can cause hypothermia, and the cold combined with hard labor can cause a heart attack. Go slowly to prevent these problems.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://thesurvivalmom.com/survive-blizzard-vehicle/"><strong>If stranded in a blizzard, stay in your vehicle</strong></a><strong>. </strong>Run the engine occasionally to keep warm, but turn it off at least 10 minutes every hour to reduce your risk of CO poisoning or fuel loss. Keep the exhaust pipe clear. Place a signal, like a red cloth, on your car&#39;s antenna to get attention. turn on the overhead light to make sure people can see you.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.mass.gov/service-details/winter-storm-safety-tips"><strong>Protect yourself from carbon monoxide poisoning</strong></a><strong>. </strong>Keep exhaust events from gas furnace systems and your gas dryer clear from packed snow. If the home cannot vent, you can be exposed to deadly carbon monoxide. Also, make sure that your CO detectors are fully functional.<br />
+	For more information about staying safe in a blizzard, visit:<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.accuweather.com/en/features/trend/emergency-kits-for-winter-weat/40698">Accuweather: Blizzard Survival Guide &ndash; These Tips Could Help Save Your Life</a><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://thesurvivalmom.com/survive-blizzard-vehicle/">Popular Science: How Not to Die in a Blizzard</a><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.nws.noaa.gov/os/winter/">National Weather Service: Winter Storm Safety Tips and Resources</a><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.ready.gov/winter-weather">Ready.gov: Snowstorms &amp; Extreme Cold</a><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://weather.com/safety/winter/news/blizzard-survival-tips">Weather.com: How to Survive if You Are Stranded in a Blizzard</a></p>
+<h2>
+	<a name="_pfn4i4eq7o6r"></a>Before, During and After a Tsunami</h2>
+<p>
+	Tsunamis occur when underwater earthquakes or volcano eruptions cause huge waves that crash to the shoreline. Close to<a href="https://www.dosomething.org/us/facts/11-facts-about-tsunamis">80% of the tsunamis in the world</a><u> </u>will happen within the Ring of Fire in the Pacific Ocean. The waves can be over 100 feet tall, causing serious flooding and damage along the shoreline. In the United States, Washington, Oregon, California, and Hawaii are at the biggest risk. Many countries around the globe also face serious tsunami risk, and the impact can be devastating. If you live along the coast, you should know how to handle yourself in the event of a tsunami. Here are some first aid tips to consider:<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/tsunami#Before"><strong>If a tsunami is coming, go far away and high</strong></a><strong>. </strong>Aim to be 100 feet above sea level and at least 2 miles from shore to prevent injury. If you are close enough to see the wave, you are too close to be safe. Remember that a tsunami warning means one is likely and you need to take precautions now.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.triplicate.com/csp/mediapool/sites/Triplicate/News/story.csp?cid=4351066&amp;sid=923&amp;fid=151"><strong>If you live in a tsunami-prone area, have an evacuation bag packed at all times.</strong></a><strong> </strong>Tsunamis do not have a &quot;season&quot; the way tropical storms do, so always be ready to move should the need arise.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/tsunami#After"><strong>After the tsunami, know the risks of the disaster area</strong></a><strong>. </strong>These events cause crumbled roads, increase the risk of landslides, allow mud flows to happen and leave dangerous floodwaters behind. Avoid disaster areas if at all possible.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Prepare for aftershocks. </strong>Aftershocks can occur if the tsunami was because of an earthquake, and they may impact you on land or cause additional waves.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.osha.gov/OshDoc/data_Hurricane_Facts/Bulletin2.pdf"><strong>Protect your skin and feet from floodwater.</strong></a><strong> </strong>When returning to damaged areas for recovery, wear long pants and long sleeves. Have sturdy shoes on your feet. Cuts or abrasions are easily infected when you come into contact with flood waters.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://schoolsciencetaskaboutdisasterivangarcia.weebly.com/what-to-do-before-during-and-after-a-tsunami.html"><strong>Check those around you for injuries and administer first aid if needed</strong></a><strong>. </strong>Emergency professionals are going to be busy helping seriously injured or trapped people, so the more first aid you know how to provide, the better those around you will be.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.ready.gov/tsunamis"><strong>Allow the professionals to rescue trapped people</strong></a><strong>. </strong>While wanting to help is admirable, many people have been injured or killed after a tsunami when they tried to rescue trapped individuals without the right equipment. Allow the pros to do what they are trained to do.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.cnn.com/2016/11/13/world/tsunami-what-to-do/index.html"><strong>Remember that there will be more waves</strong></a><strong>. </strong>While the first wave is often the biggest, the aftershocks will cause more waves. Most tsunami events are a series of waves lasting several hours, so wait until you get the all-clear from the emergency professionals before you head back to check damage to your home.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://civil-engg-world.blogspot.com/2011/04/what-to-do-after-tsunami.html"><strong>Know that tsunamis can damage building foundations</strong></a><strong>. </strong>Be cautious with every step you take in a damaged building because the foundation could be damaged. This is difficult to see, so walk carefully.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.getprepared.gc.ca/cnt/hzd/tsnms-drng-en.aspx"><strong>Watch for signs of hypothermia.</strong></a><strong> </strong>Tsunami water is typically cold, even in warm climates. Hypothermia is a serious risk for those exposed.<br />
+	For more information about preparing for and staying safe in tsunamis, visit:<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.tsunami.noaa.gov/docs/htsb_final_smfile.pdf">Tsunami Safety Booklet from the State of Hawaii</a><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.911forkids.com/index.php?option=com_content&amp;task=view&amp;id=33&amp;Itemid=1">911 for Kids: Tsunami</a><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://itic.ioc-unesco.org/index.php?option=com_content&amp;view=category&amp;layout=blog&amp;id=1018&amp;Itemid=1018">International Tsunami Information Center: After a Tsunami</a><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://cwarn.org/tsunami/be-prepared">Tsunami Early Warning System: Be Prepared</a><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.conserve-energy-future.com/various-tsunami-facts.php">Conserve Energy Future: Tsunami Facts</a></p>
+<h1>
+	<a name="_84o7dxtwrds7"></a><strong>Active Shooter Scenarios</strong></h1>
+<p>
+	Active shooter incidents have tripled in the past decade. There are now roughly <a href="https://ovc.ncjrs.gov/ncvrw2017/images/en_artwork/Fact_Sheets/2017NCVRW_MassShootings_508.pdf">20 active shooter incidents</a> each year in the U.S. compared with <a href="https://www.rn.com/nursing-news-active-shooter-know-the-facts/">6.4 incidents annually</a> between 2000 and 2007. Active shooters have targeted schools, universities, workplaces, corporations and even theaters and large events. Because of this, you need to know how to best protect yourself and those in your care if you are involved in an active shooter event. While there is typically little warning when these events happen, here are some tips that can help you and those you care for stay safe.</p>
+<h2>
+	<a name="_ti3bhp2eo0ur"></a>Preparing for an Incident</h2>
+<p>
+	Since there is rarely warning for an active shooter event, you need to be prepared for the potential of experiencing one. Here are some tips.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Have a plan. </strong>For work and school, have a plan for how you will get to safety if an active shooter comes. Always know the two nearest exits in any facility you visit and identify hiding places.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.redcross.org/news/press-release/Top-6-Red-Cross-Preparedness-Tips-to-Stay-Safe-this-Hurricane-Season"><strong>Protect those who need extra help</strong></a><strong>. </strong>If you see others, like those with disabilities or young children, who may need extra help, consider ways you will protect them.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://training.fema.gov/is/courseoverview.aspx?code=IS-907"><strong>Get trained</strong></a><strong>. </strong>If you are in a position of leadership at work or in a school, consider getting trained on how to handle active shooter scenarios.<br />
+	<em>During an Active Shooter Event</em><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.dhs.gov/sites/default/files/publications/active-shooter-how-to-respond-2017-508.pdf"><strong>If an active shooter enters a building you are in, the first goal is to run and escape</strong></a><strong>. </strong>Getting away is your top priority. Leave things behind and run, helping those who need it if possible. However, if others won&#39;t come with you, keep running.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.duq.edu/life-at-duquesne/campus-safety/active-shooter"><strong>If you cannot run, hide</strong></a><strong>. </strong>Active shooters are typically not targeting any one individual, so drop out of view, silence your electronics and stay quiet.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Spread out. </strong>Do not hide in groups, but spread out to make targets harder for the shooter to find.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.dhs.gov/sites/default/files/publications/active-shooter-poster-2017-508.pdf"><strong>Engage with the shooter only as a last resort</strong></a><strong>. </strong>If you choose to fight, commit to the action and be aggressive. Use chairs, fire extinguishers, scissors, objects you can throw or anything else to distract the shooter. The goal is to disarm and contain the shooter until help arrives. Be willing to cause severe injury to stop the shooter if needed.<br />
+	<em>After the Incident</em><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.dhs.gov/sites/default/files/publications/active-shooter-pamphlet-2017-508.pdf"><strong>Know how to respond to law enforcement.</strong></a><strong> </strong>The first goal of the police is to stop the shooter, so they will likely ignore injured until the shooter is subdued. Keep your hands visible so they know you are not a threat.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Help yourself, then others. </strong>If you are injured, care for your injuries first, then help others who need it.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://survival-mastery.com/med/health/how-to-treat-a-gunshot-wound.html"><strong>Know first aid for gunshot wounds</strong></a><strong>. </strong>Use direct pressure to wounded areas to stop bleeding. Get trained on how to apply a tourniquet, and do so if you cannot stop the bleeding another way.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Only move individuals if they are in danger. </strong>Injured individuals are best left where they are, but if they are in immediate danger from the shooter, move them to safety.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.ready.gov/active-shooter"><strong>If the individual is unconscious, turn them to the side and keep them warm</strong></a><strong>. </strong>This can be a sign of shock, so warmth is essential.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.fema.gov/media-library-data/1472672897352-d28bb197db5389e4ddedcef335d3d867/FEMA_ActiveShooter_OnePagerv1d15_508_FINAL.pdf"><strong>Prepare for ongoing mental health concerns</strong></a><strong>. </strong>Those who survive an active shooter event are often left with post-traumatic stress disorder because these events are such a strong trauma. Get mental health counseling if you need it, and recognize the signs of PTSD in others.<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.shrm.org/resourcesandtools/hr-topics/risk-management/pages/after-an-active-shooter.aspx"><strong>Understand how to spot depression</strong></a><strong>. </strong>Depression is another risk after an active shooter event, especially if people you know and love are killed or if you knew the shooter. Feelings of sadness that are oppressive, changes in diet or sleep, overall gloomy feeling and thoughts of suicide can all be attributed to depression.<br />
+	For more information about active shooters, visit:<br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.ready.gov/active-shooter">RUN. HIDE. FIGHT. Surviving an Active Shooter Event (video)</a><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.fletc.gov/training-program/law-enforcement-first-responder-training-program">Federal Law Enforcement Training Centers: Law Enforcement First Responder Training Program for Active Shooters</a><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://strategichrinc.com/active-shooter-emergency-action-plan/">Strategic HR Inc: Preparing for a Potential Active Shooter Incident</a><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.dhs.gov/active-shooter-preparedness">Homeland Security: Active Shooter Preparedness</a><br />
+	&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.ehs.iastate.edu/my-eh-s/safety-month/prepare-for-active-shooters">Iowa State University: Prepare for Active Shooters</a></p>
+<h1>
+	<a name="_1rpd272gm2nm"></a><strong>For Disasters, Preparedness and Training is Key</strong></h1>
+<p>
+	You cannot plan for a disaster, because all of these events come with fairly minimal warning. While you may have enough time to flee to safety for some types of natural disasters, there are times when you get no warning at all. In these instances, you will need to be prepared both to protect yourself and to help others. With <a href="/courses/adult-cpr-first-aid-training">first aid and disaster preparedness training</a>, and a little understanding of the risks associated with various types of disasters, you can be safer even if you are given a serious problem to handle.</p>
+<p>
+	&nbsp;</p>
+
+
+					<hr/>
+					<div class="sources">
+						<h2>Sources</h2>
+											</div>
+					<hr/>
+					<div class="comment_box">
+						<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'cprcertified'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    						<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'cprcertified'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+		s.onload = function() {
+			var oldDisplayCount = DISQUSWIDGETS.displayCount;
+			
+			DISQUSWIDGETS.displayCount = function(a) {				
+				oldDisplayCount(a);
+				$('a[href$="#disqus_thread"]').html( function() { return this.innerHTML.replace(/and.*/g, ''); } )
+			}
+		};
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+		
+    }());
+</script>
+    					</div>
+				</div>
+			</div>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"7c95fd64ce","applicationID":"2710585","transactionName":"Y1NXNkVZXhIAUhAIXVoZYBBeF1kPBVQcT0JcRg==","queueTime":0,"applicationTime":102,"atts":"TxRUQA1DTRw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
