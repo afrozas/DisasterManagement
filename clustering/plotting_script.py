@@ -6,8 +6,8 @@ from matplotlib.pyplot import figure
 import random
 import os
 import json
-from ..settings import FIGURE_DIR
 
+FIGURE_DIR = '../clustering/plot_figures'
 
 def empty_figure_folder(folder=FIGURE_DIR):
     for the_file in os.listdir(folder):
@@ -74,7 +74,7 @@ def center_based_list(centers, labels, df):
 
 def plot_top_location_stats(centers, location_stats, top_n=5):
     base_colors = "grcmyk"
-    plot_data_json = {}
+    plot_data_json = []
 
     # _ is cluster centers
     for _ in location_stats:
@@ -86,8 +86,8 @@ def plot_top_location_stats(centers, location_stats, top_n=5):
         sizes.sort(reverse=True)
         sizes = sizes[:top_n]
 
-        lat, lon = centers[_]
-        figure_name = "{}_{}.png".format(lat, lon)
+        lat, lng = centers[_]
+        figure_name = "{}_{}.png".format(lat, lng)
         figure_path = os.path.join(FIGURE_DIR, figure_name)
         fig = figure()
         explode_split = random.randint(1, top_n)
@@ -100,8 +100,10 @@ def plot_top_location_stats(centers, location_stats, top_n=5):
 
         individual_cluster_json['figure_path'] = figure_path
         individual_cluster_json['data'] = clustered_location_stats
+        individual_cluster_json['latitude'] = lat
+        individual_cluster_json['longitude'] = lng
 
-        plot_data_json[f"{lat}_{lon}"] = individual_cluster_json
+        plot_data_json.append(individual_cluster_json)
 
     return plot_data_json
 
