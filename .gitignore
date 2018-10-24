@@ -34,7 +34,6 @@
 *.sqlite3
 *.ini
 *.toml
-*.json
 *.sublime-project
 *.sublime-workspace
 *.bak
