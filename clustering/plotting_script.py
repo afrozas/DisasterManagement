@@ -9,6 +9,12 @@ import json
 
 FIGURE_DIR = '../clustering/plot_figures'
 
+def create_cluster_json(cluster_dict):
+    cluster_json = {}
+    for key in cluster_dict:
+        cluster_json[str(key)] = cluster_dict[key]
+    return cluster_json
+
 def empty_figure_folder(folder=FIGURE_DIR):
     for the_file in os.listdir(folder):
         file_path = os.path.join(folder, the_file)
@@ -69,7 +75,7 @@ def center_based_list(centers, labels, df):
 
             location_stats[label] = cluster_stats
 
-    return location_stats, keyword_stats
+    return dick, location_stats, keyword_stats
 
 
 def plot_top_location_stats(centers, location_stats, top_n=5):
@@ -112,10 +118,12 @@ def plot(file_name='data.csv'):
     empty_figure_folder()
     df = load_data(file_name)
     centers, labels = geo_clustering(df)
-    location_stats, keyword_stats = center_based_list(centers, labels, df)
+    dick, location_stats, keyword_stats = center_based_list(centers, labels, df)
+    all_points_json = create_cluster_json(dick)
     clustering_data = plot_top_location_stats(centers, location_stats)
     with open('data.json', 'w') as fp:
         json.dump(clustering_data, fp)
-
+    with open('all_points.json', 'w') as fp:
+        json.dump(all_points_json, fp)
 
 plot()
