@@ -20,5 +20,6 @@ urlpatterns = [
     re_path(r'^accounts/', include('accounts.urls')),
     path('dashboard/', include('dashboard.urls')),
     path('map/', include('clustering.urls')),
+    path('first_aid_help/', include('first_aid_help.urls')),
     path('admin/', admin.site.urls),
 ]

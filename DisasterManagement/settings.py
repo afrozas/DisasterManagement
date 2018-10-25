@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'dashboard',
-    'clustering'
+    'clustering',
+    'first_aid_help'
 ]
 
 MIDDLEWARE = [
