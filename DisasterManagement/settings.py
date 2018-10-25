@@ -26,7 +26,7 @@ SECRET_KEY = 'e=cicsscpsuq5b#h*t4xczy)l0mhy%w73cqa72ay-81s0js@jx'
 DEBUG = True
 FIGURE_DIR = os.path.join(BASE_DIR, 'clustering/plot_figures')
 
-ALLOWED_HOSTS = ['172.16.235.45', 'localhost']
+ALLOWED_HOSTS = ['172.16.235.45', 'localhost', '40.117.236.45', 'kroot.eastus.cloudapp.azure.com']
 
 AUTH_USER_MODEL = 'accounts.User'
 
