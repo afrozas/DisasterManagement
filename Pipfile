@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 plotly = "*"
 django = "*"
+pandas = "*"
+sklearn = "*"
+matplotlib = "*"
 
 [dev-packages]
 
