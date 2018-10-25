@@ -31,7 +31,8 @@ def read_all_points_data():
             lat.append(point['lat'])
             lon.append(point['log'])
             keywords.append(point['keywords'])
-        data[cluster_num] = {'lat': json.dumps(lat), 'lon': json.dumps(lon), 'text': json.dumps(keywords)}
+        data[cluster_num] = {'lat': json.dumps(
+            lat), 'lon': json.dumps(lon), 'text': json.dumps(keywords)}
     return data
 
 
@@ -43,7 +44,7 @@ def show_map(request):
             'lat': lat,
             'lon': json.dumps(lon),
             'imgs': json.dumps(imgs),
-            'text': json.dumps([f'Cluster center {i}' for i in range(len(lat))]),
+            'text': json.dumps(['Cluster center'] * len(lat)),
             'lat_center': sum(lat) / len(lat),
             'lon_center': sum(lon) / len(lon)
         },

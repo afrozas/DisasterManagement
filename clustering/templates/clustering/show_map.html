@@ -40,7 +40,8 @@
         marker: {
           size:2
         },
-        text:{{ cluster.text |safe}}
+        text:{{ cluster.text |safe}},
+        name:'Cluster ' +(1+ {{ num }}) 
       }
       data.push(c);
     {% endfor %}
@@ -52,7 +53,8 @@
         marker: {
           size:9
         },
-        text:{{ centers.text |safe}}
+        text:{{ centers.text |safe}},
+        name:'Cluster center'
       })
     var layout = {
       autosize: true,
@@ -64,7 +66,9 @@
         lon: {{ centers.lon_center }}
       },
         pitch:0,
-        zoom:3
+        zoom:3,
+        style: 'mapbox://styles/mapbox/streets-v9'
+
       },
     }
     Plotly.setPlotConfig({mapboxAccessToken: 'pk.eyJ1IjoibWFjaDY0IiwiYSI6ImNqbm5jYWdnMTI1MDQzcG9zbDhoNzUxeTEifQ.WJfcb1Yp0wN4FKNS4MUdNw'})
