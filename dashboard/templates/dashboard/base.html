@@ -38,6 +38,7 @@
             <div class="nav-wrapper grey darken-3">
                 <a href="/dashboard" class="brand-logo">&nbsp;&nbsp;Disaster Hub</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/map">Requests Map</a></li>
                     <li><a href="/dashboard/show">See Donations</a></li>
                     <li><a href="/first_aid_help">First Aid Help</a></li>
                     <li><a href="/accounts/login">Login</a></li>
@@ -46,6 +47,8 @@
             </div>
 
         </nav>
+
+        {% block map %}{% endblock %}
 
         <div class="container">
             {% block content %}{% endblock %}

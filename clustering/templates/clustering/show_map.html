@@ -1,3 +1,7 @@
+{% extends 'dashboard/base.html' %}
+
+{% block map %}
+
 <head>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -10,7 +14,7 @@
         display: inline-block;
       }
       #mapdiv{
-        width: 60%;
+        width: 55%;
         height: 80%;
       }
       #hoverinfo{
@@ -18,13 +22,15 @@
         min-height: 80%;
       }
       .plotimage{
-        max-height: 75%;
         top: 10px;
+      }
+      body{
+        background: none;
       }
     </style>
   <div class="parent">
-    <div class="child" id="mapdiv" style="width:;height:80%;"></div>
-    <div class="child" id="hoverinfo" style="width:10px;height:10px"></div>
+    <div class="child" id="mapdiv"></div>
+    <div class="child" id="hoverinfo"></div>
   </div>
   <script type="text/javascript">
     var mapDiv = document.getElementById('mapdiv');
@@ -88,4 +94,4 @@
       hoverInfoDiv.innerHTML = '';
   });
   </script>
-  
+{% endblock %}
