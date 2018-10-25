@@ -8,6 +8,13 @@
         $('select').formSelect();
         $('.tabs').tabs();
     });
+    var getLoc = function() {
+        url = 'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyCBQbi9bAaFxNcU17gYOeaPc8XgzvTNzCs'
+        fetch(url, {method:'POST', data:{}})
+        .then(function(res){
+            console.log(res);
+        });
+    };
 </script>
 
 <div class="row">
@@ -33,7 +40,7 @@
                     
                     <div class="row">
                         <div class="input-field col s12">
-                            <select name="items" multiple>
+                            <select name="items" multiple required>
                                 <option value="" disabled>Choose options</option>
                                 <!-- <option value="1">1</option> -->
                                 {% for keyword in keywords %}
@@ -43,6 +50,15 @@
                             <label>Items</label>
                         </div>
                     </div>
+
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea name="description" id="textarea1" class="materialize-textarea"></textarea>
+                            <label for="textarea1">Textarea</label>
+                        </div>
+                    </div>
+                    <!-- <button class="btn" onclick="getLoc()">Share Location</button> -->
 
                     <button name="request" type="submit" class="waves-effect waves-light btn">Submit</button>
                 </form>
