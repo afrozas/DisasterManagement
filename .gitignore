@@ -43,6 +43,3 @@ __pycache__/*
 
 # Project specific files #
 ##########################
-clustering/plot_figures/*
-clustering/all_points.json
-clustering/data.json

@@ -7,6 +7,7 @@
 <script type="text/javascript">
   var mapDiv = document.getElementById('mapdiv');
   var imgs = {{ centers.imgs |safe }};
+  var center_names = {{ centers.text |safe }};
   var data = []
   {% for num, cluster in all.items %}
     var c = {
@@ -29,7 +30,7 @@
       marker: {
         size:9
       },
-      text:{{ centers.text }}
+      text:{{ centers.text |safe}}
     })
   var layout = {
     autosize: true,
@@ -50,11 +51,10 @@ Plotly.plot('mapdiv', data, layout)
 var hoverInfoDiv = document.getElementById('hoverinfo')
 
 mapDiv.on('plotly_hover', function(data){
+  if(!data.points[0].text.startsWith('Cluster')){return;}
   var hoverinfo = data.points.map(function (d) {
-    return "<img src=data:image/png;base64,"+imgs[d.text]+">";
+    return "<img src=data:image/png;base64,"+imgs[center_names.indexOf(d.text)]+">";
   })
-  hoverInfoDiv.style.top=data.event.clientX;
-  hoverInfoDiv.style.left=data.event.clientY;
   hoverInfoDiv.innerHTML=hoverinfo;
   $('mapdiv').toggle();
 })
