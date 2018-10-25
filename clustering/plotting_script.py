@@ -7,8 +7,7 @@ import random
 import os
 import json
 
-FIGURE_DIR = 'clustering/plot_figures'
-
+FIGURE_DIR = 'plot_figures'
 
 def create_cluster_json(cluster_dict):
     cluster_json = {}
@@ -16,8 +15,9 @@ def create_cluster_json(cluster_dict):
         cluster_json[str(key)] = cluster_dict[key]
     return cluster_json
 
-
 def empty_figure_folder(folder=FIGURE_DIR):
+    if not os.path.exists(folder):
+        os.makedirs(folder)
     for the_file in os.listdir(folder):
         file_path = os.path.join(folder, the_file)
         try:
@@ -34,7 +34,7 @@ def load_data(file_name):
 
 def geo_clustering(df):
     lat, lng = df['latitude'], df['longitude']
-    kmeans = KMeans(n_clusters=10)
+    kmeans = KMeans(n_clusters=11)
     kmeans.fit(list(zip(lat, lng)))
     centers = np.array(kmeans.cluster_centers_)
     labels = kmeans.labels_
@@ -81,7 +81,7 @@ def center_based_list(centers, labels, df):
     return dick, location_stats, keyword_stats
 
 
-def plot_top_location_stats(centers, location_stats, top_n=6):
+def plot_top_location_stats(centers, location_stats, top_n=5):
     base_colors = "grcmyb"
     plot_data_json = []
 
@@ -89,21 +89,39 @@ def plot_top_location_stats(centers, location_stats, top_n=6):
     for _ in location_stats:
         individual_cluster_json = {}
         sizes = []
+        labels = []
         clustered_location_stats = location_stats[_]
+        total_counts = 0
         for key in clustered_location_stats:
             sizes.append(clustered_location_stats[key])
-        sizes.sort(reverse=True)
-        sizes = sizes[:top_n]
+            total_counts += clustered_location_stats[key]
+            labels.append(key)
+
+        for idx in range(0, len(labels)):
+            labels[idx] += f" {round((sizes[idx]/total_counts)*100, 2)}%"
 
         lat, lng = centers[_]
         figure_name = "{}_{}.png".format(lat, lng)
         figure_path = os.path.join(FIGURE_DIR, figure_name)
-        fig = figure()
+        fig, ax = plt.subplots(figsize=(6, 3), subplot_kw=dict(aspect="equal"))
         explode_split = random.randint(1, top_n)
         explode = (0.1,) * explode_split + (0.0,) * (top_n - explode_split)
         colors = ''.join(random.sample(base_colors, len(base_colors)))
-        plt.pie(sizes, explode=explode, colors=colors,
-                autopct='%1.1f%%', shadow=True, startangle=100)
+        wedges, texts = ax.pie(sizes, wedgeprops=dict(width=0.5), startangle=-40)
+        bbox_props = dict(boxstyle="square,pad=0.3", fc="w", ec="k", lw=0.72)
+        kw = dict(xycoords='data', textcoords='data', arrowprops=dict(arrowstyle="-"),
+                bbox=bbox_props, zorder=0, va="center")
+        for i, p in enumerate(wedges):
+            ang = (p.theta2 - p.theta1)/2. + p.theta1
+            y = np.sin(np.deg2rad(ang))
+            x = np.cos(np.deg2rad(ang))
+            horizontalalignment = {-1: "right", 1: "left"}[int(np.sign(x))]
+            connectionstyle = "angle,angleA=0,angleB={}".format(ang)
+            kw["arrowprops"].update({"connectionstyle": connectionstyle})
+            ax.annotate(labels[i], xy=(x, y), xytext=(1.35*np.sign(x), 1.4*y),
+                        horizontalalignment=horizontalalignment, **kw)
+
+        # plt.pie(sizes, explode=explode, colors=colors, autopct='%1.1f%%', shadow=True, startangle=100)
         plt.axis('equal')
         fig.savefig(figure_path)
 
@@ -117,18 +135,16 @@ def plot_top_location_stats(centers, location_stats, top_n=6):
     return plot_data_json
 
 
-def plot(file_name=os.path.join('clustering', 'large_set.csv')):
+def plot(file_name='large_set.csv'):
+    empty_figure_folder()
     df = load_data(file_name)
     centers, labels = geo_clustering(df)
-    dick, location_stats, keyword_stats = center_based_list(
-        centers, labels, df)
+    dick, location_stats, keyword_stats = center_based_list(centers, labels, df)
     all_points_json = create_cluster_json(dick)
-    empty_figure_folder()
     clustering_data = plot_top_location_stats(centers, location_stats)
-    with open(os.path.join('clustering', 'data.json'), 'w') as fp:
+    with open('data.json', 'w') as fp:
         json.dump(clustering_data, fp)
-    with open(os.path.join('clustering', 'all_points.json'), 'w') as fp:
+    with open('all_points.json', 'w') as fp:
         json.dump(all_points_json, fp)
-
 
 plot()
