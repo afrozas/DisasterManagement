@@ -11,15 +11,17 @@
 <link href="static/first_aid_help/css/main.css" rel="stylesheet" media="screen"> -->
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
-<link href="{% static "/css/bootstrap.css" %}" rel="stylesheet" media="screen">
-<link href="{% static "css/bootstrap-responsive.css" %}" rel="stylesheet">
-<link href="{% static "css/main.css" %}" rel="stylesheet" media="screen">
+<link href="{% static "/first_aid_help/css/bootstrap.css" %}" rel="stylesheet" media="screen">
+<link href="{% static "/first_aid_help/css/bootstrap-responsive.css" %}" rel="stylesheet">
+<link href="{% static "/first_aid_help/css/main.css" %}" rel="stylesheet" media="screen">
 
 <script>
 console.log('test widget 5');
 </script>
-<script type="text/javascript" href="static/first_aid_help/js/jquery.js"></script>
-<script type="text/javascript" href="static/first_aid_help/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script type="text/javascript" href="{% static "/first_aid_help/js/jquery.js" %}"></script>
+<script type="text/javascript" href="{% static "/first_aid_help/js/jquery-ui-1.10.3.custom.min.js" %}"></script>
+<!-- <script type="text/javascript" href="static/first_aid_help/js/jquery.js"></script>
+<script type="text/javascript" href="static/first_aid_help/js/jquery-ui-1.10.3.custom.min.js"></script> -->
 
 
 <!---header end---><div class="blue_wrap">
@@ -41,7 +43,7 @@ console.log('test widget 5');
 					<div class="post_mate row-fluid">
 						<div class="pull-right">
 							<!-- AddThis Button BEGIN -->
-							<div class="addthis_toolbox addthis_default_style " style="display: inline">
+							<!-- <div class="addthis_toolbox addthis_default_style " style="display: inline">
 								<a class="addthis_counter_facebook"></a>
 								<a class="addthis_counter_twitter"></a>
 								<a class="addthis_counter_google_plusone"></a>
@@ -51,7 +53,7 @@ console.log('test widget 5');
 							<script type="text/javascript">
                                 var addthis_config = addthis_config || {};
                                 var addthis_config = {"data_track_addressbar":false};
-                            </script>
+                            </script> -->
 							<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51eeea835eee44ea"></script>
 							<!-- AddThis Button END -->
 						</div>
@@ -469,10 +471,10 @@ console.log('test widget 5');
 
 					<hr/>
 					<div class="sources">
-						<h2>Sources</h2>
+						<h2>Source: [Link]</h2>
 											</div>
 					<hr/>
-					<div class="comment_box">
+					<!-- <div class="comment_box">
 						<div id="disqus_thread"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -508,7 +510,7 @@ console.log('test widget 5');
 		
     }());
 </script>
-    					</div>
+    					</div> -->
 				</div>
 			</div>
 
