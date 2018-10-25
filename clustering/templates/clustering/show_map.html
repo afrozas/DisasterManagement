@@ -2,30 +2,43 @@
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
-<div id="tester" style="width:;height:80%;"></div>
+<div id="mapdiv" style="width:;height:80%;"></div>
 <div id="hoverinfo" style="width:10px;height:10px"></div>
 <script type="text/javascript">
-  var TESTER = document.getElementById('tester');
-  var imgs = {{ imgs |safe }};
-  var data = [{
+  var mapDiv = document.getElementById('mapdiv');
+  var imgs = {{ centers.imgs |safe }};
+  var data = []
+  {% for num, cluster in all.items %}
+    var c = {
+      type: 'scattermapbox',
+      lat:{{ cluster.lat }},
+      lon: {{ cluster.lon }},
+      mode:'markers',
+      marker: {
+        size:2
+      },
+      text:{{ cluster.text |safe}}
+    }
+    data.push(c);
+  {% endfor %}
+  data.push({
       type:'scattermapbox',
-      lat:{{ lat }},
-      lon: {{ lon }},
+      lat:{{ centers.lat }},
+      lon: {{ centers.lon }},
       mode:'markers',
       marker: {
         size:9
       },
-      text:{{ text }}
-    }]
-
+      text:{{ centers.text }}
+    })
   var layout = {
     autosize: true,
     hovermode:'closest',
     mapbox: {
     bearing:0,
     center: {
-      lat:{{ lat_center }},
-      lon: {{ lon_center }}
+      lat:{{ centers.lat_center }},
+      lon: {{ centers.lon_center }}
     },
       pitch:0,
       zoom:3
@@ -33,17 +46,17 @@
   }
   Plotly.setPlotConfig({mapboxAccessToken: 'pk.eyJ1IjoibWFjaDY0IiwiYSI6ImNqbm5jYWdnMTI1MDQzcG9zbDhoNzUxeTEifQ.WJfcb1Yp0wN4FKNS4MUdNw'})
 
-Plotly.plot('tester', data, layout)
+Plotly.plot('mapdiv', data, layout)
 var hoverInfoDiv = document.getElementById('hoverinfo')
 
-TESTER.on('plotly_hover', function(data){
+mapDiv.on('plotly_hover', function(data){
   var hoverinfo = data.points.map(function (d) {
     return "<img src=data:image/png;base64,"+imgs[d.text]+">";
   })
   hoverInfoDiv.style.top=data.event.clientX;
   hoverInfoDiv.style.left=data.event.clientY;
   hoverInfoDiv.innerHTML=hoverinfo;
-  $('tester').toggle();
+  $('mapdiv').toggle();
 })
   .on('plotly_unhover', function(data){
     hoverInfoDiv.innerHTML = '';
