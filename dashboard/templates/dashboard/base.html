@@ -14,9 +14,23 @@
 
         <style>
             body{
-                background-image: url("https://r1.ilikewallpaper.net/iphone-se-wallpapers/download/5401/Dark-Wood-Texture-iphone-se-wallpaper-ilikewallpaper_com_200.jpg")
+                background-image: url('{% static "/dashboard/images/bg.jpeg" %}')
             }
         </style>
+
+        <script>
+            $(document).ready(function(){
+                $('select').formSelect();
+                $('.tabs').tabs();
+            });
+            var getLoc = function() {
+                url = 'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyCBQbi9bAaFxNcU17gYOeaPc8XgzvTNzCs'
+                fetch(url, {method:'POST', data:{}})
+                .then(function(res){
+                    console.log(res);
+                });
+            };
+        </script>
     </head> 
 
     <body>
@@ -24,6 +38,7 @@
             <div class="nav-wrapper grey darken-3">
                 <a href="/dashboard" class="brand-logo">&nbsp;&nbsp;Disaster Hub</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/dashboard/show">See Donations</a></li>
                     <li><a href="/first_aid_help">First Aid Help</a></li>
                     <li><a href="/accounts/login">Login</a></li>
                     <li><a href="/accounts/signup">Register</a></li>
