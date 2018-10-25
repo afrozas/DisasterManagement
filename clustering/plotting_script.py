@@ -63,6 +63,7 @@ def center_based_list(centers, labels, df):
         for item in cluster_list:
             words = item['keywords'].split(',')
             for word in words:
+                if word not in ["Food", "Water", "Medicines", "Clothing", "Appliances", "Others"]: word = "Others"
                 if word not in cluster_stats:
                     cluster_stats[word] = 1
                 else:
@@ -78,8 +79,8 @@ def center_based_list(centers, labels, df):
     return dick, location_stats, keyword_stats
 
 
-def plot_top_location_stats(centers, location_stats, top_n=5):
-    base_colors = "grcmyk"
+def plot_top_location_stats(centers, location_stats, top_n=6):
+    base_colors = "grcmyb"
     plot_data_json = []
 
     # _ is cluster centers
@@ -114,7 +115,7 @@ def plot_top_location_stats(centers, location_stats, top_n=5):
     return plot_data_json
 
 
-def plot(file_name='data.csv'):
+def plot(file_name='large_set.csv'):
     empty_figure_folder()
     df = load_data(file_name)
     centers, labels = geo_clustering(df)
