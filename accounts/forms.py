@@ -10,7 +10,8 @@ class SignUpForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['name', 'phone_num', 'email', 'address', 'password1', 'password2']
+        fields = ['name', 'phone_num', 'email',
+                  'address', 'password1', 'password2']
         widgets = {
             'address': forms.Textarea(attrs={'rows': 4, 'style': 'resize:none;'
                                              })
@@ -20,7 +21,8 @@ class SignUpForm(UserCreationForm):
 class AddWatchForm(forms.Form):
     # watchee_phone = forms.CharField(max_length=15)
     # watchee_email = forms.EmailField()
-    watchees = forms.ModelMultipleChoiceField(User.objects.all())
+    watchees = forms.ModelMultipleChoiceField(
+        User.objects.all(), label='Select the people you want to watch')
 
     # class Meta:
     #     model = User

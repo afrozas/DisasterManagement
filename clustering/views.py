@@ -11,8 +11,11 @@ def read_cluster_center_data():
     lat = []
     lon = []
     for cluster in clusters:
-        with open(cluster['figure_path'], 'rb') as f:
-            imgs.append(base64.b64encode(f.read()).decode('utf-8'))
+        try:
+            with open(cluster['figure_path'], 'rb') as f:
+                imgs.append(base64.b64encode(f.read()).decode('utf-8'))
+        except FileNotFoundError:
+            imgs.append('')
         data.append(cluster['data'])
         lat.append(cluster['latitude'])
         lon.append(cluster['longitude'])
