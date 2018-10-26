@@ -14,7 +14,11 @@
 
         <style>
             body{
-                background-image: url('{% static "/dashboard/images/bg.jpeg" %}')
+                background: url('{% static "/dashboard/images/bg.jpeg" %}') no-repeat center center fixed; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
             }
         </style>
 
@@ -41,8 +45,13 @@
                     <li><a href="/map">Requests Map</a></li>
                     <li><a href="/dashboard/show">See Donations</a></li>
                     <li><a href="/first_aid_help">First Aid Help</a></li>
-                    <li><a href="/accounts/login">Login</a></li>
-                    <li><a href="/accounts/signup">Register</a></li>
+                    {% if not user.is_authenticated %}
+                        <li><a href="/accounts/login">Login</a></li>
+                        <li><a href="/accounts/signup">Register</a></li>
+                    {% else %}
+                        <li><a href="/accounts/addwatch">Add Watchees</a></li>
+                        <li><a href="/accounts/logout">Logout</a></li>
+                    {% endif %}
                 </ul>
             </div>
 
@@ -51,6 +60,11 @@
         {% block map %}{% endblock %}
 
         <div class="container">
+            {% if message %}
+                <div class="collection">
+                    <a href="#!" class="collection-item">{{ message }}</a>
+                </div>
+            {% endif %}
             {% block content %}{% endblock %}
         </div>
     </body>

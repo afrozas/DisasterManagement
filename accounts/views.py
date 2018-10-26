@@ -35,9 +35,11 @@ class AddWatchView(LoginRequiredMixin, FormView):
         return super().form_valid(form)
 
 
+
 @login_required
 def marksafe(request):
     if request.method == 'POST':
         request.user.is_safe = True
         request.user.save()
+        print("Here")
     return HttpResponseRedirect('/dashboard')

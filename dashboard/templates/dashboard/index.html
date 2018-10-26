@@ -113,5 +113,39 @@
         </div>
     </div>
 </div>
+<div>
+    <!-- {% if not user.is_authenticated %}
+
+    {% else %}
+
+    {% endif %} -->
+
+    <div class="row">
+        <div class="col m6">
+            <div class="card">
+            <div class="card-content">
+                <span class="card-title">Mark Yourself Safe</span>
+                <p>This will inform all your watchers of your safety via email.</p>
+                <br/>
+                {% if not user.is_authenticated %}
+                    <p>You need to login to enable this feature.</p>
+                {% else %}
+                    {% if user.is_safe %}
+                        <p>You are already marked as safe</p>
+                    {% else %}
+                    <form action="/accounts/marksafe/" method="post">
+                        {% csrf_token %}
+                        <button value="Submit" type="submit" class="waves-effect waves-light btn">Mark me safe</button>
+                    </form>
+                    {% endif %}
+                {% endif%}
+            </div>
+            <div class="card-action">
+            </div>
+            </div>
+        </div>
+    </div>
+
+</div>
 </div>
 {% endblock %}
