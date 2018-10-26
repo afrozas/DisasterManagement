@@ -38,18 +38,17 @@
     var center_names = {{ centers.text |safe }};
     var data = []
     {% for num, cluster in all.items %}
-      var c = {
+      data.push({
         type: 'scattermapbox',
         lat:{{ cluster.lat }},
         lon: {{ cluster.lon }},
         mode:'markers',
         marker: {
-          size:2
+          size:3
         },
         text:{{ cluster.text |safe}},
         name:'Cluster ' +(1+ {{ num }}) 
-      }
-      data.push(c);
+      });
     {% endfor %}
     data.push({
         type:'scattermapbox',
@@ -72,7 +71,7 @@
         lon: {{ centers.lon_center }}
       },
         pitch:0,
-        zoom:3,
+        zoom:4,
         style: 'mapbox://styles/mapbox/streets-v9'
 
       },

@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.urls import include, re_path, path
 from django.contrib import admin
-
+from django.views.generic import RedirectView
 urlpatterns = [
+    path('', RedirectView.as_view(url='dashboard/')),
     re_path(r'^accounts/', include('accounts.urls')),
     path('dashboard/', include('dashboard.urls')),
     path('map/', include('clustering.urls')),
