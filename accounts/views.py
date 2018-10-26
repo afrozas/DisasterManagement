@@ -1,4 +1,6 @@
+from django.http import HttpResponseRedirect
 from django.views.generic.edit import FormView
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import SignUpForm, AddWatchForm
 from .models import Watch
@@ -31,3 +33,11 @@ class AddWatchView(LoginRequiredMixin, FormView):
         for watchee in watchees:
             Watch.objects.get_or_create(watcher=self.user, watchee=watchee)
         return super().form_valid(form)
+
+
+@login_required
+def marksafe(request):
+    if request.method == 'POST':
+        request.user.is_safe = True
+        request.user.save()
+    return HttpResponseRedirect('/dashboard')

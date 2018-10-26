@@ -1,6 +1,6 @@
 from django.contrib.auth.views import LoginView
 from django.urls import include, re_path, path
-from .views import SignUpView, AddWatchView
+from .views import SignUpView, AddWatchView, marksafe
 
 urlpatterns = [
     re_path(
@@ -18,5 +18,6 @@ urlpatterns = [
         AddWatchView.as_view(),
         name='addwatch'
     ),
+    re_path(r'^marksafe/$', marksafe, name='marksafe'),
     path('', include('django.contrib.auth.urls'))
 ]
