@@ -4,7 +4,7 @@ from .models import Request
 
 
 def index(request):
-    context = {'keywords': Request.KEYWORDS}
+    context = {'keywords': [v for _, v in Request.KEYWORDS]}
     if request.method == "POST":
         form_data = request.POST
         for keyword in form_data.getlist('items', []):
@@ -29,12 +29,12 @@ def index(request):
 
 def show_donations(request):
     donations = Request.objects.filter(donation=True)
-    food_donations = donations.filter(keywords='food')
-    water_donations = donations.filter(keywords='water')
-    appl_donations = donations.filter(keywords='appliances')
-    med_donations = donations.filter(keywords='medicines')
-    clothing_donations = donations.filter(keywords='clothing')
-    other_donations = donations.filter(keywords='others')
+    food_donations = donations.filter(keyword='food')
+    water_donations = donations.filter(keyword='water')
+    appl_donations = donations.filter(keyword='appliances')
+    med_donations = donations.filter(keyword='medicines')
+    clothing_donations = donations.filter(keyword='clothing')
+    other_donations = donations.filter(keyword='others')
     context = {'food': food_donations, 'water': water_donations, 'appl': appl_donations,
                'medicine': med_donations, 'clothing': clothing_donations, 'others': other_donations}
     return render(request, 'dashboard/show_donations.html', context)
