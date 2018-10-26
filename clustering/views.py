@@ -23,7 +23,7 @@ def read_all_points_data():
     with open('clustering/all_points.json') as f:
         all_points = json.load(f)
     data = {}
-    for cluster_num, points in all_points.items():
+    for num, points in sorted(all_points.items(), key=lambda x: int(x[0])):
         lat = []
         lon = []
         keywords = []
@@ -31,20 +31,19 @@ def read_all_points_data():
             lat.append(point['lat'])
             lon.append(point['log'])
             keywords.append(point['keywords'])
-        data[cluster_num] = {'lat': json.dumps(
+        data[num] = {'lat': json.dumps(
             lat), 'lon': json.dumps(lon), 'text': json.dumps(keywords)}
     return data
 
 
 def show_map(request):
     imgs, _, lat, lon = read_cluster_center_data()
-    print(json.dumps(lat), lon)
     data = {
         'centers': {
             'lat': lat,
-            'lon': json.dumps(lon),
+            'lon': lon,
             'imgs': json.dumps(imgs),
-            'text': json.dumps(['Cluster center'] * len(lat)),
+            'text': json.dumps([f'Cluster {i}' for i in range(1, len(lat) + 1)]),
             'lat_center': sum(lat) / len(lat),
             'lon_center': sum(lon) / len(lon)
         },

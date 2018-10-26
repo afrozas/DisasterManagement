@@ -6,14 +6,19 @@ from matplotlib.pyplot import figure
 import random
 import os
 import json
+import sys
 
-FIGURE_DIR = 'plot_figures'
+ROOT_DIR = '' if len(sys.argv) < 2 else sys.argv[1]
+
+FIGURE_DIR = os.path.join(ROOT_DIR, 'plot_figures')
+
 
 def create_cluster_json(cluster_dict):
     cluster_json = {}
     for key in cluster_dict:
         cluster_json[str(key)] = cluster_dict[key]
     return cluster_json
+
 
 def empty_figure_folder(folder=FIGURE_DIR):
     if not os.path.exists(folder):
@@ -65,7 +70,8 @@ def center_based_list(centers, labels, df):
         for item in cluster_list:
             words = item['keywords'].split(',')
             for word in words:
-                if word not in ["Food", "Water", "Medicines", "Clothing", "Appliances", "Others"]: word = "Others"
+                if word not in ["Food", "Water", "Medicines", "Clothing", "Appliances", "Others"]:
+                    word = "Others"
                 if word not in cluster_stats:
                     cluster_stats[word] = 1
                 else:
@@ -107,18 +113,19 @@ def plot_top_location_stats(centers, location_stats, top_n=5):
         explode_split = random.randint(1, top_n)
         explode = (0.1,) * explode_split + (0.0,) * (top_n - explode_split)
         colors = ''.join(random.sample(base_colors, len(base_colors)))
-        wedges, texts = ax.pie(sizes, wedgeprops=dict(width=0.5), startangle=-40)
+        wedges, texts = ax.pie(
+            sizes, wedgeprops=dict(width=0.5), startangle=-40)
         bbox_props = dict(boxstyle="square,pad=0.3", fc="w", ec="k", lw=0.72)
         kw = dict(xycoords='data', textcoords='data', arrowprops=dict(arrowstyle="-"),
-                bbox=bbox_props, zorder=0, va="center")
+                  bbox=bbox_props, zorder=0, va="center")
         for i, p in enumerate(wedges):
-            ang = (p.theta2 - p.theta1)/2. + p.theta1
+            ang = (p.theta2 - p.theta1) / 2. + p.theta1
             y = np.sin(np.deg2rad(ang))
             x = np.cos(np.deg2rad(ang))
             horizontalalignment = {-1: "right", 1: "left"}[int(np.sign(x))]
             connectionstyle = "angle,angleA=0,angleB={}".format(ang)
             kw["arrowprops"].update({"connectionstyle": connectionstyle})
-            ax.annotate(labels[i], xy=(x, y), xytext=(1.35*np.sign(x), 1.4*y),
+            ax.annotate(labels[i], xy=(x, y), xytext=(1.35 * np.sign(x), 1.4 * y),
                         horizontalalignment=horizontalalignment, **kw)
 
         # plt.pie(sizes, explode=explode, colors=colors, autopct='%1.1f%%', shadow=True, startangle=100)
@@ -135,16 +142,18 @@ def plot_top_location_stats(centers, location_stats, top_n=5):
     return plot_data_json
 
 
-def plot(file_name='large_set.csv'):
+def plot(file_name=os.path.join(ROOT_DIR, 'large_set.csv')):
     empty_figure_folder()
     df = load_data(file_name)
     centers, labels = geo_clustering(df)
-    dick, location_stats, keyword_stats = center_based_list(centers, labels, df)
+    dick, location_stats, keyword_stats = center_based_list(
+        centers, labels, df)
     all_points_json = create_cluster_json(dick)
     clustering_data = plot_top_location_stats(centers, location_stats)
-    with open('data.json', 'w') as fp:
-        json.dump(clustering_data, fp)
-    with open('all_points.json', 'w') as fp:
-        json.dump(all_points_json, fp)
+    with open(os.path.join(ROOT_DIR, 'data.json'), 'w') as fp:
+        json.dump(clustering_data, fp, indent=4)
+    with open(os.path.join(ROOT_DIR, 'all_points.json'), 'w') as fp:
+        json.dump(all_points_json, fp, indent=4)
+
 
 plot()
