@@ -22,5 +22,4 @@ urlpatterns = [
     path('dashboard/', include('dashboard.urls')),
     path('map/', include('clustering.urls')),
     path('first_aid_help/', include('first_aid_help.urls')),
-    path('admin/', admin.site.urls),
 ]

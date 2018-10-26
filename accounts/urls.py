@@ -1,4 +1,4 @@
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import include, re_path, path
 from .views import SignUpView, AddWatchView, marksafe
 
@@ -12,6 +12,12 @@ urlpatterns = [
         r'^login/$',
         LoginView.as_view(template_name='accounts/login.html'),
         name='login'
+    ),
+    re_path(
+        r'^logout/$',
+        LogoutView.as_view(
+            template_name='accounts/logout.html', next_page='/dashboard'),
+        name='logout'
     ),
     re_path(
         r'^addwatch/$',
