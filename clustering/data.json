@@ -1,145 +1,145 @@
 [
     {
-        "figure_path": "clustering/plot_figures/34.090628226760565_92.42304441042253.png",
+        "figure_path": "clustering/plot_figures/34.001529335772354_92.54867649539295.png",
         "data": {
-            "Food": 44,
-            "Medicines": 60,
-            "Others": 128,
-            "Clothing": 60,
+            "Food": 41,
+            "Medicines": 67,
+            "Others": 133,
+            "Clothing": 65,
             "Appliances": 25,
-            "Water": 38
+            "Water": 39
         },
-        "latitude": 34.090628226760565,
-        "longitude": 92.42304441042253
+        "latitude": 34.001529335772354,
+        "longitude": 92.54867649539295
     },
     {
-        "figure_path": "clustering/plot_figures/31.87842857815384_90.49557929353846.png",
+        "figure_path": "clustering/plot_figures/32.00007794285714_90.50574713839285.png",
         "data": {
             "Medicines": 58,
             "Water": 27,
-            "Clothing": 49,
-            "Others": 105,
-            "Appliances": 33,
-            "Food": 57
+            "Clothing": 52,
+            "Others": 102,
+            "Appliances": 34,
+            "Food": 59
         },
-        "latitude": 31.87842857815384,
-        "longitude": 90.49557929353846
+        "latitude": 32.00007794285714,
+        "longitude": 90.50574713839285
     },
     {
-        "figure_path": "clustering/plot_figures/30.197329083667626_89.14166582234957.png",
+        "figure_path": "clustering/plot_figures/30.240320929859156_89.13629040197183.png",
         "data": {
-            "Medicines": 71,
-            "Others": 138,
-            "Water": 26,
-            "Food": 52,
+            "Medicines": 72,
+            "Others": 146,
+            "Water": 24,
+            "Food": 51,
             "Appliances": 26,
             "Clothing": 36
         },
-        "latitude": 30.197329083667626,
-        "longitude": 89.14166582234957
+        "latitude": 30.240320929859156,
+        "longitude": 89.13629040197183
     },
     {
-        "figure_path": "clustering/plot_figures/29.943726687577637_92.36424310869565.png",
+        "figure_path": "clustering/plot_figures/29.826961256944443_92.22735883125.png",
         "data": {
-            "Others": 119,
-            "Medicines": 49,
-            "Appliances": 36,
-            "Clothing": 36,
-            "Water": 27,
-            "Food": 57
+            "Others": 106,
+            "Medicines": 43,
+            "Appliances": 30,
+            "Clothing": 29,
+            "Water": 26,
+            "Food": 54
         },
-        "latitude": 29.943726687577637,
-        "longitude": 92.36424310869565
+        "latitude": 29.826961256944443,
+        "longitude": 92.22735883125
     },
     {
-        "figure_path": "clustering/plot_figures/33.73839650440414_89.29078008808291.png",
+        "figure_path": "clustering/plot_figures/31.662034150000004_93.07762339558823.png",
         "data": {
-            "Medicines": 67,
-            "Water": 35,
-            "Appliances": 38,
-            "Clothing": 61,
-            "Others": 127,
-            "Food": 52
-        },
-        "latitude": 33.73839650440414,
-        "longitude": 89.29078008808291
-    },
-    {
-        "figure_path": "clustering/plot_figures/31.990805782889733_93.08508791102662.png",
-        "data": {
-            "Food": 39,
-            "Appliances": 22,
-            "Medicines": 52,
-            "Clothing": 35,
             "Others": 94,
+            "Food": 42,
+            "Appliances": 27,
+            "Medicines": 53,
+            "Clothing": 35,
             "Water": 21
         },
-        "latitude": 31.990805782889733,
-        "longitude": 93.08508791102662
+        "latitude": 31.662034150000004,
+        "longitude": 93.07762339558823
     },
     {
-        "figure_path": "clustering/plot_figures/17.907849769501464_75.77509046480938.png",
+        "figure_path": "clustering/plot_figures/33.79965933947368_89.31111120710527.png",
         "data": {
-            "Clothing": 54,
-            "Food": 43,
-            "Others": 136,
-            "Water": 28,
-            "Appliances": 20,
-            "Medicines": 60
+            "Medicines": 64,
+            "Others": 130,
+            "Water": 37,
+            "Appliances": 38,
+            "Clothing": 60,
+            "Food": 54
         },
-        "latitude": 17.907849769501464,
-        "longitude": 75.77509046480938
+        "latitude": 33.79965933947368,
+        "longitude": 89.31111120710527
     },
     {
-        "figure_path": "clustering/plot_figures/17.53074601366459_73.15977345279504.png",
+        "figure_path": "clustering/plot_figures/17.669996555555556_75.88146002945736.png",
         "data": {
-            "Others": 173,
-            "Water": 51,
-            "Medicines": 90,
-            "Food": 64,
-            "Appliances": 33,
-            "Clothing": 72
+            "Clothing": 61,
+            "Food": 48,
+            "Others": 156,
+            "Water": 31,
+            "Appliances": 22,
+            "Medicines": 69
         },
-        "latitude": 17.53074601366459,
-        "longitude": 73.15977345279504
+        "latitude": 17.669996555555556,
+        "longitude": 75.88146002945736
     },
     {
-        "figure_path": "clustering/plot_figures/15.883439367724872_75.25502672116401.png",
+        "figure_path": "clustering/plot_figures/17.673489090990987_73.1283896804054.png",
         "data": {
-            "Food": 51,
-            "Others": 141,
-            "Appliances": 42,
-            "Clothing": 42,
-            "Water": 29,
-            "Medicines": 73
+            "Others": 157,
+            "Medicines": 89,
+            "Food": 58,
+            "Appliances": 32,
+            "Clothing": 65,
+            "Water": 43
         },
-        "latitude": 15.883439367724872,
-        "longitude": 75.25502672116401
+        "latitude": 17.673489090990987,
+        "longitude": 73.1283896804054
     },
     {
-        "figure_path": "clustering/plot_figures/14.02257489936709_75.84621390886076.png",
+        "figure_path": "clustering/plot_figures/14.283009566753924_75.90443052068063.png",
         "data": {
-            "Others": 109,
-            "Medicines": 60,
-            "Clothing": 42,
-            "Appliances": 29,
-            "Food": 41,
-            "Water": 35
-        },
-        "latitude": 14.02257489936709,
-        "longitude": 75.84621390886076
-    },
-    {
-        "figure_path": "clustering/plot_figures/14.378022712240664_73.14474185394191.png",
-        "data": {
-            "Water": 57,
-            "Others": 165,
+            "Food": 50,
+            "Others": 133,
+            "Appliances": 39,
             "Medicines": 69,
-            "Food": 74,
-            "Clothing": 71,
-            "Appliances": 46
+            "Clothing": 51,
+            "Water": 40
         },
-        "latitude": 14.378022712240664,
-        "longitude": 73.14474185394191
+        "latitude": 14.283009566753924,
+        "longitude": 75.90443052068063
+    },
+    {
+        "figure_path": "clustering/plot_figures/15.900171974927957_74.51502327579252.png",
+        "data": {
+            "Others": 123,
+            "Water": 37,
+            "Medicines": 60,
+            "Clothing": 38,
+            "Food": 52,
+            "Appliances": 36
+        },
+        "latitude": 15.900171974927957,
+        "longitude": 74.51502327579252
+    },
+    {
+        "figure_path": "clustering/plot_figures/14.273683271136367_73.08570479659092.png",
+        "data": {
+            "Water": 49,
+            "Others": 155,
+            "Medicines": 65,
+            "Food": 65,
+            "Clothing": 66,
+            "Appliances": 41
+        },
+        "latitude": 14.273683271136367,
+        "longitude": 73.08570479659092
     }
 ]

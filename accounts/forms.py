@@ -15,3 +15,13 @@ class SignUpForm(UserCreationForm):
             'address': forms.Textarea(attrs={'rows': 4, 'style': 'resize:none;'
                                              })
         }
+
+
+class AddWatchForm(forms.Form):
+    # watchee_phone = forms.CharField(max_length=15)
+    # watchee_email = forms.EmailField()
+    watchees = forms.ModelMultipleChoiceField(User.objects.all())
+
+    # class Meta:
+    #     model = User
+    #     exclude = ['']
