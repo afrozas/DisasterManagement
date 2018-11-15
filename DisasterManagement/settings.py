@@ -27,7 +27,7 @@ DEBUG = True
 FIGURE_DIR = os.path.join(BASE_DIR, 'clustering/plot_figures')
 CLUSTER_RUN_INTERVAL = 600
 
-ALLOWED_HOSTS = ['172.16.235.45', 'localhost', '40.117.236.45', 'kroot.eastus.cloudapp.azure.com']
+ALLOWED_HOSTS = ['disaster-hub.azurewebsites.net', 'localhost', '40.117.236.45', 'kroot.eastus.cloudapp.azure.com']
 
 AUTH_USER_MODEL = 'accounts.User'
 
