@@ -87,7 +87,7 @@ def center_based_list(centers, labels, df):
     return dick, location_stats, keyword_stats
 
 
-def plot_top_location_stats(centers, location_stats, top_n=5):
+def plot_top_location_stats(centers, location_stats, all_points_json, top_n=5):
     base_colors = "grcmyb"
     plot_data_json = []
 
@@ -136,6 +136,7 @@ def plot_top_location_stats(centers, location_stats, top_n=5):
         individual_cluster_json['data'] = clustered_location_stats
         individual_cluster_json['latitude'] = lat
         individual_cluster_json['longitude'] = lng
+        individual_cluster_json['points'] = all_points_json[str(_)]
 
         plot_data_json.append(individual_cluster_json)
 
@@ -149,7 +150,7 @@ def plot(file_name=os.path.join(ROOT_DIR, 'large_set.csv')):
     dick, location_stats, keyword_stats = center_based_list(
         centers, labels, df)
     all_points_json = create_cluster_json(dick)
-    clustering_data = plot_top_location_stats(centers, location_stats)
+    clustering_data = plot_top_location_stats(centers, location_stats, all_points_json)
     with open(os.path.join(ROOT_DIR, 'data.json'), 'w') as fp:
         json.dump(clustering_data, fp, indent=4)
     with open(os.path.join(ROOT_DIR, 'all_points.json'), 'w') as fp:
